@@ -1,0 +1,3 @@
+/home/nik/CLionProjects/KickAss/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nik/CLionProjects/KickAss/cmake-build-debug/CMakeFiles/KickAss.dir
+/home/nik/CLionProjects/KickAss/cmake-build-debug/CMakeFiles/edit_cache.dir

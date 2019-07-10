@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/KickAss.dir/main.c.o  -o KickAss -L/usr/lib/x86_64-linux-gnu  -lSDL2 

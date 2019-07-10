@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="KickAss"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/nik/CLionProjects/KickAss/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/nik/CLionProjects/KickAss/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="KickAss">
+				<Option output="/home/nik/CLionProjects/KickAss/cmake-build-debug/KickAss" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nik/CLionProjects/KickAss/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 KickAss"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="KickAss/fast">
+				<Option output="/home/nik/CLionProjects/KickAss/cmake-build-debug/KickAss" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nik/CLionProjects/KickAss/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 KickAss/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/nik/CLionProjects/KickAss/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nik/CLionProjects/KickAss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/nik/CLionProjects/KickAss/collections/iteration.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/collections/list.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/collections/map.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/collections/safe_array.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/hyper_c.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/hyper_c/concatenation.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/hyper_c/definition.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/hyper_c/macros.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/hyper_c/usage.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/main.c">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/sdl.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/sprite.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/tools/string.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/tools/vector.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

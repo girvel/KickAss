@@ -1,0 +1,10 @@
+/home/nik/Downloads/clion-2019.1.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/nik/CLionProjects/KickAss
+-- Configuring done
+CMake Error at CMakeLists.txt:9 (add_executable):
+  Target "KickAss" links to item "-L/usr/lib/x86_64-linux-gnu -lSDL2 " which
+  has leading or trailing whitespace.  This is now an error according to
+  policy CMP0004.
+
+
+-- Generating done
+-- Build files have been written to: /home/nik/CLionProjects/KickAss/cmake-build-debug
