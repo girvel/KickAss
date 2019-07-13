@@ -8,6 +8,12 @@
 #include <stdbool.h>
 #include "macros.h"
 
+#define DEF_CTOR(TYPE, ARGS, CODE) TYPE *_(TYPE, create) ARGS {\
+    ALLOCATE_VAR(TYPE, this) \
+    CODE \
+    return this; \
+}
+
 #define DEF_CTOR0(TYPE, CODE) TYPE *_(TYPE, create)() { \
     ALLOCATE_VAR(TYPE, this) \
     CODE \

@@ -39,7 +39,11 @@ bool _(MAP, get)(LIST *this, TKEY key, TVALUE *value) {
 }
 
 bool _(MAP, add)(LIST *this, TKEY key, TVALUE value) {
+    TVALUE dummy;
+    if (_(MAP, get)(this, key, &dummy)) return false;
+
     _(LIST, add)(this, $(PAIR)(key, value));
+    return true;
 }
 
 #undef PAIR

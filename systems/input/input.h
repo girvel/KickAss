@@ -8,11 +8,21 @@
 #include <SDL2/SDL.h>
 #include "../../hyper_c.h"
 
+
+
+/* Map generation begins */
+
 DEF_EQUAL(char, {
     return this == other;
 })
 
-typedef void (*input_action)(sprite *game_character);
+struct game;
+typedef struct game game;
+
+struct input;
+typedef struct input input;
+
+typedef void (*input_action)(input *input);
 #define TKEY char
 #define TVALUE input_action
 #include "../../collections/map.h"
@@ -23,40 +33,38 @@ typedef void (*input_action)(sprite *game_character);
 #define MAP map_char_input_action
 #define LIST list_pair_char_input_action
 
+/* Map generation ends */
 
-typedef struct {
+
+
+typedef struct input {
+    game *game;
+    sprite *controllable;
+
     LIST *control;
 } input;
 
-DEF_CTOR0(input, {
+DEF_CTOR(input, (game *game, sprite *controllable), {
     this->control = $(LIST)(10, 10);
+    this->game = game;
+    this->controllable = controllable;
 })
 
 DEF_DTOR(input, )
 
-void input_read(input *this, bool *game_active, sprite *game_character) {
+void input_read(input *this) {
     SDL_Event event;
 
-    while( SDL_PollEvent( &event ) ) {
+    while(SDL_PollEvent(&event)) {
         switch (event.type) {
             case SDL_KEYDOWN:
                 printf("Key press detected\n");
 
                 input_action action;
                 if (_(MAP, get)(this->control, event.key.keysym.sym, &action)) {
-                    action(game_character);
+                    action(this);
                 }
 
-                break;
-
-            case SDL_KEYUP:
-                printf("Key release detected\n");
-                if (event.key.keysym.sym == SDLK_ESCAPE) {
-                    *game_active = false;
-                }
-                break;
-
-            default:
                 break;
         }
     }

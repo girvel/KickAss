@@ -18,7 +18,6 @@ typedef struct {
     SDL_Window *window;
     SDL_Renderer *renderer;
 
-    bool active;
     list_rsprite *sprites;
 } output;
 
@@ -42,7 +41,6 @@ DEF_CTOR0(output, {
         return NULL;
     }
 
-    this->active = true;
     this->sprites = list_rsprite_create(10, 10);
 })
 
