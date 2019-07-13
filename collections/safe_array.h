@@ -5,6 +5,7 @@
 #ifdef T
 #include "../hyper_c.h"
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define ARRAY _(array, T)
 

@@ -1,69 +1,51 @@
-#include <stdio.h>
-#include <SDL2/SDL.h>
-#include <stdbool.h>
-#include "tools/string.h"
-#include "tools/vector.h"
-#include "sdl.h"
-#include "sprite.h"
+#include "systems/output/output.h"
+#include "systems/input/input.h"
 
-#define T int
-#include "collections/list.h"
-#undef T
+typedef struct {
+    bool active;
 
-#define TKEY vector
-#define TVALUE int
-#include "collections/map.h"
-#undef TKEY
-#undef TVALUE
+    output *output;
+    input *input;
+} game;
 
-#include "collections/iteration.h"
-#include "hyper_c.h"
-
-
-void game_start(sdl *sdl) {
+void game_start(game *this) {
     vector position = {100, 100};
-    SDL_Texture *kick_ass = load_texture(sdl->renderer, "KickAss.bmp");
+    SDL_Texture *kick_ass = load_texture(this->output->renderer, "KickAss.bmp");
 
-    list_rsprite_add(sdl->sprites, sprite_create(kick_ass, position));
-    list_rsprite_add(sdl->sprites, sprite_create(kick_ass, vector_add(position, position)));
+    sprite *character;
+    list_rsprite_add(this->output->sprites, sprite_create(kick_ass, position));
+    list_rsprite_add(this->output->sprites, character = sprite_create(kick_ass, vector_add(position, position)));
 
-    sdl_start(sdl);
+    while (this->active) {
+        output_display(this->output);
+        input_read(this->input, &this->active, character);
+        SDL_Delay(1000 / 24);
+    }
 }
 
+#define CONTROL_MAP map_char_input_action
+
+void move_forward(sprite *game_character) {
+    INCREMENT(vector, game_character->position, $(vector)(0, -5));
+}
+
+DEF_CTOR0(game, {
+    this->output = output_create();
+    this->input = input_create();
+
+    _(CONTROL_MAP, add)(this->input->control, 'w', &move_forward);
+})
+
+DEF_DTOR(game, {
+    output_destroy(this->output);
+    input_destroy(this->input);
+})
 
 
 int main() {
-    sdl *sdl = sdl_create();
-
-    game_start(sdl);
-
-    sdl_destroy(sdl);
-/*
-    int __arr[3] = {1, 2, 3};
-
-    USING (list_int, list, list_int_create(2, 1), {
-        USING (array_int, safe_array, array_int_create(__arr, 3, false), {
-            list_int_put(list, safe_array);
-        })
-
-        list_int_add(list, -1);
-        list_int_add(list, -100);
-
-        FOREACH (int, e, list) {
-            printf("%i ", e);
-        }
+    USING(game, game, game_create(), {
+        game_start(game);
     })
 
-    MAP(vector, int) *map = CTOR(MAP(vector, int))(10, 10);
-    map_vector_int_add(map, vector_create(3, 4), 5);
-    map_vector_int_add(map, vector_create(5, 12), 13);
-
-    int result;
-    if (map_vector_int_get(map, vector_create(5, 12), &result)) {
-        printf("result is %i\n", result);
-    } else {
-        printf("there is no result\n");
-    }
-*/
     return 0;
 }

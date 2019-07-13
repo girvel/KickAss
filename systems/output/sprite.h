@@ -3,14 +3,15 @@
 //
 
 #include <SDL2/SDL.h>
-#include "tools/string.h"
-#include "tools/vector.h"
+#include "../../tools/string.h"
+#include "../../tools/vector.h"
 
 #ifndef KICKASS_SPRITE_H
 #define KICKASS_SPRITE_H
 
 SDL_Texture *load_texture(SDL_Renderer *renderer, string name) {
     SDL_Surface *bmp;
+
     USING (char, s, string_concat("../Assets/Sprites/", name), {
         bmp = SDL_LoadBMP(s);
     })
@@ -35,7 +36,7 @@ DEF_CTOR2(sprite, SDL_Texture *texture, vector position, {
     this->position = position;
 })
 
-DEF_DTOR(sprite, {})
+DEF_DTOR(sprite, )
 
 void put_sprite(SDL_Renderer *renderer, sprite *sprite) {
     SDL_Rect rect = CAST(vector, sprite->position, SDL_Rect);

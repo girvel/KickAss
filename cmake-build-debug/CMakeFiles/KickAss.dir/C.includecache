@@ -29,6 +29,8 @@ list.h
 /home/nik/CLionProjects/KickAss/hyper_c.h
 stdlib.h
 -
+stdbool.h
+-
 
 /home/nik/CLionProjects/KickAss/hyper_c.h
 hyper_c/concatenation.h
@@ -43,49 +45,45 @@ hyper_c/usage.h
 /home/nik/CLionProjects/KickAss/hyper_c/concatenation.h
 
 /home/nik/CLionProjects/KickAss/hyper_c/definition.h
+stdbool.h
+-
+macros.h
+/home/nik/CLionProjects/KickAss/hyper_c/macros.h
 
 /home/nik/CLionProjects/KickAss/hyper_c/macros.h
+concatenation.h
+/home/nik/CLionProjects/KickAss/hyper_c/concatenation.h
 
 /home/nik/CLionProjects/KickAss/hyper_c/usage.h
 
 /home/nik/CLionProjects/KickAss/main.c
-stdio.h
--
+systems/output/output.h
+/home/nik/CLionProjects/KickAss/systems/output/output.h
+systems/input/input.h
+/home/nik/CLionProjects/KickAss/systems/input/input.h
+
+/home/nik/CLionProjects/KickAss/systems/input/input.h
 SDL2/SDL.h
 -
-stdbool.h
--
-tools/string.h
-/home/nik/CLionProjects/KickAss/tools/string.h
-tools/vector.h
-/home/nik/CLionProjects/KickAss/tools/vector.h
-sdl.h
-/home/nik/CLionProjects/KickAss/sdl.h
-sprite.h
-/home/nik/CLionProjects/KickAss/sprite.h
-collections/list.h
-/home/nik/CLionProjects/KickAss/collections/list.h
-collections/map.h
-/home/nik/CLionProjects/KickAss/collections/map.h
-collections/iteration.h
-/home/nik/CLionProjects/KickAss/collections/iteration.h
-hyper_c.h
+../../hyper_c.h
 /home/nik/CLionProjects/KickAss/hyper_c.h
+../../collections/map.h
+/home/nik/CLionProjects/KickAss/collections/map.h
 
-/home/nik/CLionProjects/KickAss/sdl.h
+/home/nik/CLionProjects/KickAss/systems/output/output.h
 SDL2/SDL.h
 -
 sprite.h
-/home/nik/CLionProjects/KickAss/sprite.h
-collections/list.h
+/home/nik/CLionProjects/KickAss/systems/output/sprite.h
+../../collections/list.h
 /home/nik/CLionProjects/KickAss/collections/list.h
 
-/home/nik/CLionProjects/KickAss/sprite.h
+/home/nik/CLionProjects/KickAss/systems/output/sprite.h
 SDL2/SDL.h
 -
-tools/string.h
+../../tools/string.h
 /home/nik/CLionProjects/KickAss/tools/string.h
-tools/vector.h
+../../tools/vector.h
 /home/nik/CLionProjects/KickAss/tools/vector.h
 
 /home/nik/CLionProjects/KickAss/tools/string.h

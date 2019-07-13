@@ -22,8 +22,7 @@ DEF_VALUE_CTOR2(PAIR, TKEY key, TVALUE value, {
 #include "list.h"
 #undef T
 
-#define LIST _(list, PAIR)
-
+#define LIST __(list_pair, TKEY, TVALUE)
 #define MAP __(map, TKEY, TVALUE)
 
 
@@ -40,13 +39,13 @@ bool _(MAP, get)(LIST *this, TKEY key, TVALUE *value) {
 }
 
 bool _(MAP, add)(LIST *this, TKEY key, TVALUE value) {
-    _(LIST, add)(this, CTOR(PAIR)(key, value));
+    _(LIST, add)(this, $(PAIR)(key, value));
 }
 
 #undef PAIR
 #undef LIST
 #undef MAP
 
-#define MAP(TKEY1, TVALUE1) __(list_pair, TKEY1, TVALUE1)
+#define MAP(TKEY_, TVALUE_) __(list_pair, TKEY_, TVALUE_)
 #endif
 #endif

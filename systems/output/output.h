@@ -2,8 +2,8 @@
 // Created by nik on 10.07.19.
 //
 
-#ifndef KICKASS_SDL_H
-#define KICKASS_SDL_H
+#ifndef KICKASS_OUTPUT_H
+#define KICKASS_OUTPUT_H
 
 #include <SDL2/SDL.h>
 #include "sprite.h"
@@ -11,7 +11,7 @@
 typedef sprite* rsprite;
 
 #define T rsprite
-#include "collections/list.h"
+#include "../../collections/list.h"
 #undef T
 
 typedef struct {
@@ -20,9 +20,9 @@ typedef struct {
 
     bool active;
     list_rsprite *sprites;
-} sdl;
+} output;
 
-DEF_CTOR0(sdl, {
+DEF_CTOR0(output, {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         printf("Error during SDL initialization: %s\n", SDL_GetError());
         return NULL;
@@ -46,24 +46,20 @@ DEF_CTOR0(sdl, {
     this->sprites = list_rsprite_create(10, 10);
 })
 
-DEF_DTOR(sdl, {
+DEF_DTOR(output, {
     SDL_DestroyRenderer(this->renderer);
     SDL_DestroyWindow(this->window);
     SDL_Quit();
 })
 
-void sdl_start(sdl *this) {
-    while (this->active) {
-        SDL_RenderClear(this->renderer);
+void output_display(output *this) {
+    SDL_RenderClear(this->renderer);
 
-        FOREACH (rsprite, s, this->sprites) {
-            put_sprite(this->renderer, s);
-        }
-
-        SDL_RenderPresent(this->renderer);
-
-        SDL_Delay(1000 / 24);
+    FOREACH (rsprite, s, this->sprites) {
+        put_sprite(this->renderer, s);
     }
+
+    SDL_RenderPresent(this->renderer);
 }
 
-#endif //KICKASS_SDL_H
+#endif //KICKASS_OUTPUT_H

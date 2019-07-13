@@ -19,7 +19,7 @@ typedef struct {
 } LIST;
 
 DEF_CTOR2(LIST, size_t memory_size, size_t memory_increment, {
-    this->first = NEW_ARRAY(T, memory_size);
+    this->first = ALLOCATE_ARRAY(T, memory_size);
     this->size = 0;
     this->memory_size = memory_size;
     this->memory_increment = memory_increment;
@@ -32,7 +32,7 @@ DEF_DTOR(LIST, {
 void _(LIST, expand) (LIST *this) {
     this->memory_size += this->memory_increment;
     
-    NEW_VAR_ARRAY(T, new_array, this->memory_size)
+    ALLOCATE_VAR_ARRAY(T, new_array, this->memory_size)
     
     FOREACH(T, element, this) {
         new_array[i] = element;

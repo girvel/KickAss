@@ -9,7 +9,7 @@
 
 typedef char* string;
 
-int string_size(string str) {
+int string_size(const string str) {
     int i;
     for (i = 0; str[i] != '\0'; i++) {
         if (i >= 1024) {
@@ -25,16 +25,19 @@ string string_concat(string first, string second) {
     int first_size = string_size(first),
         second_size = string_size(second);
 
-    string new_string = (string) malloc((first_size + second_size) * sizeof(char));
+    string new_string = (string) malloc((first_size + second_size + 1) * sizeof(char));
 
     int i;
     for (i = 0; i < first_size; i++) {
         new_string[i] = first[i];
     }
 
-    for (int j = 0; j < second_size; j++) {
+    int j;
+    for (j = 0; j < second_size; j++) {
         new_string[i + j] = second[j];
     }
+
+    new_string[i + j] = '\0';
 
     return new_string;
 }

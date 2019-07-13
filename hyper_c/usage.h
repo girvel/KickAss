@@ -5,7 +5,7 @@
 #ifndef KICKASS_USAGE_H
 #define KICKASS_USAGE_H
 
-#define CTOR(TYPE) _(TYPE, create)
+#define $(TYPE) _(TYPE, create)
 
 #define CAST(FROM, VAR, TO) __(FROM, to, TO)(VAR)
 
