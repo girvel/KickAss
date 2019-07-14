@@ -38,7 +38,7 @@ void game_register_player(game *this, character *item) {
 }
 
 void move_forward(input *input) {
-    INCREMENT(vector, input->controllable->sprite->position, $(vector)(0, -10));
+    INCREMENT(vector, input->controllable->position->vector, $(vector)(0, -10));
 }
 
 void escape(input *input) {
@@ -55,9 +55,8 @@ DEF_CTOR(game, (), {
 
     game_register_player(this,
         $(character)(
-            $(sprite)(
-                load_texture(this->output->renderer, "KickAss.bmp"),
-                $(vector)(100, 100))));
+            $(sprite)(load_texture(this->output->renderer, "KickAss.bmp")),
+            $(position)($(vector)(100, 100))));
 
     _(CONTROL_MAP, add)(this->input->control, 'w', &move_forward);
     _(CONTROL_MAP, add)(this->input->control, SDLK_ESCAPE, &escape);

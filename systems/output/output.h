@@ -11,6 +11,8 @@
 
 #define T rcharacter
 #include "../../collections/list.h"
+#include "../placing/position.h"
+
 #undef T
 
 typedef struct {
@@ -49,8 +51,8 @@ DEF_DTOR(output, {
     SDL_Quit();
 })
 
-void output_sprite(output *this, sprite *sprite) {
-    SDL_Rect rect = CAST(vector, sprite->position, SDL_Rect);
+void output_sprite(output *this, sprite *sprite, position *position) {
+    SDL_Rect rect = CAST(vector, position->vector, SDL_Rect);
 
     SDL_QueryTexture(sprite->texture, NULL, NULL, &rect.w, &rect.h);
     SDL_RenderCopy(this->renderer, sprite->texture, NULL, &rect);
@@ -60,7 +62,7 @@ void output_display(output *this) {
     SDL_RenderClear(this->renderer);
 
     FOREACH (rcharacter, c, this->subjects) {
-        output_sprite(this, c->sprite);
+        output_sprite(this, c->sprite, c->position);
     }
 
     SDL_RenderPresent(this->renderer);

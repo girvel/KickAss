@@ -28,12 +28,10 @@ SDL_Texture *load_texture(SDL_Renderer *renderer, string name) {
 
 typedef struct {
     SDL_Texture *texture;
-    vector position;
 } sprite;
 
-DEF_CTOR(sprite, (SDL_Texture *texture, vector position), {
+DEF_CTOR(sprite, (SDL_Texture *texture), {
     this->texture = texture;
-    this->position = position;
 })
 
 DEF_DTOR(sprite, )

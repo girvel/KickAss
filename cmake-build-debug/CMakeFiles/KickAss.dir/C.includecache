@@ -9,6 +9,8 @@
 /home/nik/CLionProjects/KickAss/character.h
 systems/output/sprite.h
 /home/nik/CLionProjects/KickAss/systems/output/sprite.h
+systems/placing/position.h
+/home/nik/CLionProjects/KickAss/systems/placing/position.h
 
 /home/nik/CLionProjects/KickAss/collections/iteration.h
 
@@ -87,12 +89,18 @@ sprite.h
 /home/nik/CLionProjects/KickAss/character.h
 ../../collections/list.h
 /home/nik/CLionProjects/KickAss/collections/list.h
+../placing/position.h
+/home/nik/CLionProjects/KickAss/systems/placing/position.h
 
 /home/nik/CLionProjects/KickAss/systems/output/sprite.h
 SDL2/SDL.h
 -
 ../../tools/string.h
 /home/nik/CLionProjects/KickAss/tools/string.h
+../../tools/vector.h
+/home/nik/CLionProjects/KickAss/tools/vector.h
+
+/home/nik/CLionProjects/KickAss/systems/placing/position.h
 ../../tools/vector.h
 /home/nik/CLionProjects/KickAss/tools/vector.h
 
