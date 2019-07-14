@@ -95,6 +95,9 @@
 		<Unit filename="/home/nik/CLionProjects/KickAss/collections/safe_array.h">
 			<Option target="KickAss"/>
 		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/control.h">
+			<Option target="KickAss"/>
+		</Unit>
 		<Unit filename="/home/nik/CLionProjects/KickAss/game.h">
 			<Option target="KickAss"/>
 		</Unit>

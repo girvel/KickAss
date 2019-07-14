@@ -47,22 +47,8 @@ void game_register_player(game *this, character *item) {
 }
 
 
-void move_forward(input *input) {
-    input->controllable->movable->direction.y = -1;
-}
-
-void stop_forward(input *input) {
-    if (input->controllable->movable->direction.y == -1) {
-        input->controllable->movable->direction.y = 0;
-    }
-}
-
-void escape(input *input) {
-    *input->game_active = false;
-}
-
-
 #define CONTROL_MAP map_char_input_action
+#include "control.h"
 
 DEF_CTOR(game, (), {
     this->__all_characters = $(list_rcharacter)(10, 10);
@@ -77,9 +63,8 @@ DEF_CTOR(game, (), {
             $(position)($(vector)(100, 100)),
             $(movable)(10)));
 
-    _(CONTROL_MAP, add)(this->input->control_press, 'w', &move_forward);
-    _(CONTROL_MAP, add)(this->input->control_release, 'w', &stop_forward);
-    _(CONTROL_MAP, add)(this->input->control_press, SDLK_ESCAPE, &escape);
+
+    register_control(this->input);
 })
 
 DEF_DTOR(game, {
