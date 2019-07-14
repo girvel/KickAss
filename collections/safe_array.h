@@ -15,7 +15,7 @@ typedef struct {
     bool dynamic;
 } ARRAY;
 
-DEF_CTOR3(ARRAY, T *first, size_t size, bool dynamic, {
+DEF_CTOR(ARRAY, (T *first, size_t size, bool dynamic), {
     this->first = first;
     this->size = size;
     this->dynamic = dynamic;

@@ -12,7 +12,7 @@ typedef struct {
     int x, y;
 } vector;
 
-DEF_VALUE_CTOR2(vector, int x, int y, {
+DEF_VALUE_CTOR(vector, (int x, int y), {
     this.x = x;
     this.y = y;
 })

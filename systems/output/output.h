@@ -21,7 +21,7 @@ typedef struct {
     list_rsprite *sprites;
 } output;
 
-DEF_CTOR0(output, {
+DEF_CTOR(output, (), {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         printf("Error during SDL initialization: %s\n", SDL_GetError());
         return NULL;

@@ -14,31 +14,7 @@
     return this; \
 }
 
-#define DEF_CTOR0(TYPE, CODE) TYPE *_(TYPE, create)() { \
-    ALLOCATE_VAR(TYPE, this) \
-    CODE \
-    return this; \
-}
-
-#define DEF_CTOR1(TYPE, ARG1, CODE) TYPE *_(TYPE, create)(ARG1) { \
-    ALLOCATE_VAR(TYPE, this) \
-    CODE \
-    return this; \
-}
-
-#define DEF_CTOR2(TYPE, ARG1, ARG2, CODE) TYPE *_(TYPE, create)(ARG1, ARG2) { \
-    ALLOCATE_VAR(TYPE, this) \
-    CODE \
-    return this; \
-}
-
-#define DEF_CTOR3(TYPE, ARG1, ARG2, ARG3, CODE) TYPE *_(TYPE, create)(ARG1, ARG2, ARG3) { \
-    ALLOCATE_VAR(TYPE, this) \
-    CODE \
-    return this; \
-}
-
-#define DEF_VALUE_CTOR2(TYPE, ARG1, ARG2, CODE) TYPE _(TYPE, create)(ARG1, ARG2) {\
+#define DEF_VALUE_CTOR(TYPE, ARGS, CODE) TYPE _(TYPE, create) ARGS {\
     TYPE this; \
     CODE \
     return this; \

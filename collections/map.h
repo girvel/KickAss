@@ -13,7 +13,7 @@ typedef struct {
     TVALUE value;
 } PAIR;
 
-DEF_VALUE_CTOR2(PAIR, TKEY key, TVALUE value, {
+DEF_VALUE_CTOR(PAIR, (TKEY key, TVALUE value), {
     this.key = key;
     this.value = value;
 })

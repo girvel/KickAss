@@ -31,7 +31,7 @@ typedef struct {
     vector position;
 } sprite;
 
-DEF_CTOR2(sprite, SDL_Texture *texture, vector position, {
+DEF_CTOR(sprite, (SDL_Texture *texture, vector position), {
     this->texture = texture;
     this->position = position;
 })

@@ -26,7 +26,7 @@ void escape(input *input) {
     input->game->active = false;
 }
 
-DEF_CTOR0(game, {
+DEF_CTOR(game, (), {
     this->output = output_create();
 
     vector position = $(vector)(100, 100);

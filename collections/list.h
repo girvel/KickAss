@@ -18,7 +18,7 @@ typedef struct {
     size_t memory_increment;
 } LIST;
 
-DEF_CTOR2(LIST, size_t memory_size, size_t memory_increment, {
+DEF_CTOR(LIST, (size_t memory_size, size_t memory_increment), {
     this->first = ALLOCATE_ARRAY(T, memory_size);
     this->size = 0;
     this->memory_size = memory_size;
