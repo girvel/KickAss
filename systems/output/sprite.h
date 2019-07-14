@@ -38,11 +38,4 @@ DEF_CTOR(sprite, (SDL_Texture *texture, vector position), {
 
 DEF_DTOR(sprite, )
 
-void put_sprite(SDL_Renderer *renderer, sprite *sprite) {
-    SDL_Rect rect = CAST(vector, sprite->position, SDL_Rect);
-
-    SDL_QueryTexture(sprite->texture, NULL, NULL, &rect.w, &rect.h);
-    SDL_RenderCopy(renderer, sprite->texture, NULL, &rect);
-}
-
 #endif //KICKASS_SPRITE_H

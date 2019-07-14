@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/nik/CLionProjects/KickAss/character.h">
+			<Option target="KickAss"/>
+		</Unit>
 		<Unit filename="/home/nik/CLionProjects/KickAss/collections/iteration.h">
 			<Option target="KickAss"/>
 		</Unit>
@@ -90,6 +93,9 @@
 			<Option target="KickAss"/>
 		</Unit>
 		<Unit filename="/home/nik/CLionProjects/KickAss/collections/safe_array.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/game.h">
 			<Option target="KickAss"/>
 		</Unit>
 		<Unit filename="/home/nik/CLionProjects/KickAss/hyper_c.h">

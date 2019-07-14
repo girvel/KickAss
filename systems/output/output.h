@@ -7,10 +7,9 @@
 
 #include <SDL2/SDL.h>
 #include "sprite.h"
+#include "../../character.h"
 
-typedef sprite* rsprite;
-
-#define T rsprite
+#define T rcharacter
 #include "../../collections/list.h"
 #undef T
 
@@ -18,7 +17,7 @@ typedef struct {
     SDL_Window *window;
     SDL_Renderer *renderer;
 
-    list_rsprite *sprites;
+    list_rcharacter *subjects;
 } output;
 
 DEF_CTOR(output, (), {
@@ -41,7 +40,7 @@ DEF_CTOR(output, (), {
         return NULL;
     }
 
-    this->sprites = list_rsprite_create(10, 10);
+    this->subjects = list_rcharacter_create(10, 10);
 })
 
 DEF_DTOR(output, {
@@ -50,14 +49,25 @@ DEF_DTOR(output, {
     SDL_Quit();
 })
 
+void output_sprite(output *this, sprite *sprite) {
+    SDL_Rect rect = CAST(vector, sprite->position, SDL_Rect);
+
+    SDL_QueryTexture(sprite->texture, NULL, NULL, &rect.w, &rect.h);
+    SDL_RenderCopy(this->renderer, sprite->texture, NULL, &rect);
+}
+
 void output_display(output *this) {
     SDL_RenderClear(this->renderer);
 
-    FOREACH (rsprite, s, this->sprites) {
-        put_sprite(this->renderer, s);
+    FOREACH (rcharacter, c, this->subjects) {
+        output_sprite(this, c->sprite);
     }
 
     SDL_RenderPresent(this->renderer);
+}
+
+void output_register(output *this, character *character) {
+    list_rcharacter_add(this->subjects, character);
 }
 
 #endif //KICKASS_OUTPUT_H

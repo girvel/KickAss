@@ -38,16 +38,15 @@ typedef void (*input_action)(input *input);
 
 
 typedef struct input {
-    game *game;
-    sprite *controllable;
+    character *controllable;
+    bool *game_active;
 
     LIST *control;
 } input;
 
-DEF_CTOR(input, (game *game, sprite *controllable), {
+DEF_CTOR(input, (bool *game_active), {
     this->control = $(LIST)(10, 10);
-    this->game = game;
-    this->controllable = controllable;
+    this->game_active = game_active;
 })
 
 DEF_DTOR(input, )
@@ -56,16 +55,13 @@ void input_read(input *this) {
     SDL_Event event;
 
     while(SDL_PollEvent(&event)) {
-        switch (event.type) {
-            case SDL_KEYDOWN:
-                printf("Key press detected\n");
+        if (this->controllable != NULL && event.type == SDL_KEYDOWN) {
+            printf("Key press detected\n");
 
-                input_action action;
-                if (_(MAP, get)(this->control, event.key.keysym.sym, &action)) {
-                    action(this);
-                }
-
-                break;
+            input_action action;
+            if (_(MAP, get)(this->control, event.key.keysym.sym, &action)) {
+                action(this);
+            }
         }
     }
 }

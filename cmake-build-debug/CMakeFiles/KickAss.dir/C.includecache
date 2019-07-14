@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/nik/CLionProjects/KickAss/character.h
+systems/output/sprite.h
+/home/nik/CLionProjects/KickAss/systems/output/sprite.h
+
 /home/nik/CLionProjects/KickAss/collections/iteration.h
 
 /home/nik/CLionProjects/KickAss/collections/list.h
@@ -32,6 +36,12 @@ stdlib.h
 stdbool.h
 -
 
+/home/nik/CLionProjects/KickAss/game.h
+systems/output/output.h
+/home/nik/CLionProjects/KickAss/systems/output/output.h
+systems/input/input.h
+/home/nik/CLionProjects/KickAss/systems/input/input.h
+
 /home/nik/CLionProjects/KickAss/hyper_c.h
 hyper_c/concatenation.h
 /home/nik/CLionProjects/KickAss/hyper_c/concatenation.h
@@ -57,10 +67,8 @@ concatenation.h
 /home/nik/CLionProjects/KickAss/hyper_c/usage.h
 
 /home/nik/CLionProjects/KickAss/main.c
-systems/output/output.h
-/home/nik/CLionProjects/KickAss/systems/output/output.h
-systems/input/input.h
-/home/nik/CLionProjects/KickAss/systems/input/input.h
+game.h
+/home/nik/CLionProjects/KickAss/game.h
 
 /home/nik/CLionProjects/KickAss/systems/input/input.h
 SDL2/SDL.h
@@ -75,6 +83,8 @@ SDL2/SDL.h
 -
 sprite.h
 /home/nik/CLionProjects/KickAss/systems/output/sprite.h
+../../character.h
+/home/nik/CLionProjects/KickAss/character.h
 ../../collections/list.h
 /home/nik/CLionProjects/KickAss/collections/list.h
 
