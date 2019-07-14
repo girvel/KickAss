@@ -8,13 +8,19 @@
 #include "../../tools/vector.h"
 
 typedef struct {
-    vector velocity;
+    int potential_velocity;
+    vector direction;
 } movable;
 
-DEF_CTOR(movable, (), {
-    this->velocity = $(vector)(0, 1);
+DEF_CTOR(movable, (int potential_velocity), {
+    this->potential_velocity = potential_velocity;
+    this->direction = vector_zero();
 })
 
 DEF_DTOR(movable, )
+
+vector movable_get_velocity(movable *this) {
+    return vector_multiply(this->potential_velocity, this->direction);
+}
 
 #endif //KICKASS_MOVABLE_H

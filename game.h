@@ -48,12 +48,12 @@ void game_register_player(game *this, character *item) {
 
 
 void move_forward(input *input) {
-    input->controllable->movable->velocity.y = -10;
+    input->controllable->movable->direction.y = -1;
 }
 
 void stop_forward(input *input) {
-    if (input->controllable->movable->velocity.y == -10) {
-        input->controllable->movable->velocity.y = 0;
+    if (input->controllable->movable->direction.y == -1) {
+        input->controllable->movable->direction.y = 0;
     }
 }
 
@@ -75,7 +75,7 @@ DEF_CTOR(game, (), {
         $(character)(
             $(sprite)(load_texture(this->output->renderer, "KickAss.bmp")),
             $(position)($(vector)(100, 100)),
-            $(movable)()));
+            $(movable)(10)));
 
     _(CONTROL_MAP, add)(this->input->control_press, 'w', &move_forward);
     _(CONTROL_MAP, add)(this->input->control_release, 'w', &stop_forward);

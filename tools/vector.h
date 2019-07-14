@@ -17,6 +17,8 @@ DEF_VALUE_CTOR(vector, (int x, int y), {
     this.y = y;
 })
 
+vector vector_zero() {return $(vector)(0, 0);}
+
 DEF_CAST(vector, SDL_Rect, {
     other.x = this.x;
     other.y = this.y;
@@ -27,10 +29,17 @@ DEF_EQUAL(vector, {
 })
 
 vector vector_add(vector v1, vector v2) {
-    vector result;
-    result.x = v1.x + v2.x;
-    result.y = v1.y + v2.y;
-    return result;
+    return $(vector) (
+        v1.x + v2.x,
+        v1.y + v2.y
+        );
+}
+
+vector vector_multiply(int scalar, vector vector) {
+    return $(vector)(
+        scalar * vector.x,
+        scalar * vector.y
+        );
 }
 
 #endif //KICKASS_VECTOR_H
