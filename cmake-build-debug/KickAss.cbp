@@ -119,6 +119,12 @@
 		<Unit filename="/home/nik/CLionProjects/KickAss/systems/input/input.h">
 			<Option target="KickAss"/>
 		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/systems/movement/movable.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/systems/movement/movement.h">
+			<Option target="KickAss"/>
+		</Unit>
 		<Unit filename="/home/nik/CLionProjects/KickAss/systems/output/output.h">
 			<Option target="KickAss"/>
 		</Unit>

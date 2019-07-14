@@ -11,6 +11,8 @@ systems/output/sprite.h
 /home/nik/CLionProjects/KickAss/systems/output/sprite.h
 systems/placing/position.h
 /home/nik/CLionProjects/KickAss/systems/placing/position.h
+systems/movement/movable.h
+/home/nik/CLionProjects/KickAss/systems/movement/movable.h
 
 /home/nik/CLionProjects/KickAss/collections/iteration.h
 
@@ -43,6 +45,8 @@ systems/output/output.h
 /home/nik/CLionProjects/KickAss/systems/output/output.h
 systems/input/input.h
 /home/nik/CLionProjects/KickAss/systems/input/input.h
+systems/movement/movement.h
+/home/nik/CLionProjects/KickAss/systems/movement/movement.h
 
 /home/nik/CLionProjects/KickAss/hyper_c.h
 hyper_c/concatenation.h
@@ -79,6 +83,14 @@ SDL2/SDL.h
 /home/nik/CLionProjects/KickAss/hyper_c.h
 ../../collections/map.h
 /home/nik/CLionProjects/KickAss/collections/map.h
+
+/home/nik/CLionProjects/KickAss/systems/movement/movable.h
+../../tools/vector.h
+/home/nik/CLionProjects/KickAss/tools/vector.h
+
+/home/nik/CLionProjects/KickAss/systems/movement/movement.h
+../../hyper_c.h
+/home/nik/CLionProjects/KickAss/hyper_c.h
 
 /home/nik/CLionProjects/KickAss/systems/output/output.h
 SDL2/SDL.h

@@ -7,6 +7,7 @@
 
 #include "systems/output/output.h"
 #include "systems/input/input.h"
+#include "systems/movement/movement.h"
 
 
 typedef struct game {
@@ -14,21 +15,29 @@ typedef struct game {
 
     output *output;
     input *input;
+    movement *movement;
 
     list_rcharacter *__all_characters;
 } game;
 
+void game_update(game *this) {
+    output_display(this->output);
+    input_read(this->input);
+    movement_move(this->movement);
+}
+
 void game_start(game *this) {
     while (this->active) {
-        output_display(this->output);
-        input_read(this->input);
+        game_update(this);
 
-        SDL_Delay(1000 / 24);
+        SDL_Delay(1000 / 50);
     }
 }
 
 void game_register(game *this, character *item) {
     output_register(this->output, item);
+    movement_register(this->movement, item);
+    list_rcharacter_add(this->__all_characters, item);
 }
 
 void game_register_player(game *this, character *item) {
@@ -37,29 +46,40 @@ void game_register_player(game *this, character *item) {
     this->input->controllable = item;
 }
 
+
 void move_forward(input *input) {
-    INCREMENT(vector, input->controllable->position->vector, $(vector)(0, -10));
+    input->controllable->movable->velocity.y = -10;
+}
+
+void stop_forward(input *input) {
+    if (input->controllable->movable->velocity.y == -10) {
+        input->controllable->movable->velocity.y = 0;
+    }
 }
 
 void escape(input *input) {
     *input->game_active = false;
 }
 
+
 #define CONTROL_MAP map_char_input_action
 
 DEF_CTOR(game, (), {
     this->__all_characters = $(list_rcharacter)(10, 10);
 
-    this->output = output_create();
-    this->input = input_create(&this->active);
+    this->output = $(output)();
+    this->input = $(input)(&this->active);
+    this->movement = $(movement)();
 
     game_register_player(this,
         $(character)(
             $(sprite)(load_texture(this->output->renderer, "KickAss.bmp")),
-            $(position)($(vector)(100, 100))));
+            $(position)($(vector)(100, 100)),
+            $(movable)()));
 
-    _(CONTROL_MAP, add)(this->input->control, 'w', &move_forward);
-    _(CONTROL_MAP, add)(this->input->control, SDLK_ESCAPE, &escape);
+    _(CONTROL_MAP, add)(this->input->control_press, 'w', &move_forward);
+    _(CONTROL_MAP, add)(this->input->control_release, 'w', &stop_forward);
+    _(CONTROL_MAP, add)(this->input->control_press, SDLK_ESCAPE, &escape);
 })
 
 DEF_DTOR(game, {

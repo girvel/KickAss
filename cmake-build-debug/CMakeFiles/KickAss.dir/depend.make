@@ -14,6 +14,8 @@ CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/macros.h
 CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/usage.h
 CMakeFiles/KickAss.dir/main.c.o: ../main.c
 CMakeFiles/KickAss.dir/main.c.o: ../systems/input/input.h
+CMakeFiles/KickAss.dir/main.c.o: ../systems/movement/movable.h
+CMakeFiles/KickAss.dir/main.c.o: ../systems/movement/movement.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/output/output.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/output/sprite.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/placing/position.h
