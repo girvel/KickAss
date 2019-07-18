@@ -9,25 +9,30 @@
 #include "systems/placing/position.h"
 #include "systems/movement/movable.h"
 #include "systems/collision/collider.h"
+#include "systems/attack/attacking.h"
 
 typedef struct {
-    bool marked_for_delete;
-
     sprite_renderer *sprite_renderer;
     position *position;
     movable *movable;
     collider *collider;
+    attacking *attacking;
 } character;
 
 typedef character* rcharacter;
 
-DEF_CTOR(character, (sprite_renderer *sprite_renderer, position *position, movable *movable, collider *collider), {
+DEF_CTOR(character, (
+    sprite_renderer *sprite_renderer,
+    position *position,
+    movable *movable,
+    collider *collider,
+    attacking *attacking), {
+
     this->sprite_renderer = sprite_renderer;
     this->position = position;
     this->movable = movable;
     this->collider = collider;
-
-    this->marked_for_delete = false;
+    this->attacking = attacking;
 })
 
 DEF_DTOR(character, {

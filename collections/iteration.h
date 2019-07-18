@@ -9,4 +9,6 @@
     TYPE VAR = COLLECTION->first[0]; \
     for (int i = 0; i < COLLECTION->size; VAR = COLLECTION->first[++i])
 
+#define FOR(COUNTER, COLLECTION) for(int COUNTER = 0; i < COLLECTION->size; COUNTER++)
+
 #endif //KICKASS_ITERATION_H

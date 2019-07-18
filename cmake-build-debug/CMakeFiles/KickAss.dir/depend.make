@@ -14,6 +14,8 @@ CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/definition.h
 CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/macros.h
 CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/usage.h
 CMakeFiles/KickAss.dir/main.c.o: ../main.c
+CMakeFiles/KickAss.dir/main.c.o: ../systems/attack/attack.h
+CMakeFiles/KickAss.dir/main.c.o: ../systems/attack/attacking.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/collision/collider.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/collision/collision.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/input/input.h

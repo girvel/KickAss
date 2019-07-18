@@ -6,10 +6,13 @@
 #define KICKASS_COLLISION_H
 
 typedef struct {
+    list_rcharacter *destroying_list;
+
     list_rcharacter *solids;
 } collision;
 
-DEF_CTOR(collision, (), {
+DEF_CTOR(collision, (list_rcharacter *destroying_list), {
+    this->destroying_list = destroying_list;
     this->solids = $(list_rcharacter)(10, 10);
 })
 
@@ -36,7 +39,7 @@ void collision_check(collision *this) {
                         other->position->vector))
                         < solid->collider->radius + other->collider->radius) {
 
-                solid->marked_for_delete = true;
+                list_rcharacter_add(this->destroying_list, solid);
             }
         }
     }

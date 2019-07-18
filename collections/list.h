@@ -73,6 +73,10 @@ bool _(LIST, remove) (LIST *this, T item) {
     return false;
 }
 
+void _(LIST, clear) (LIST *this) {
+    this->size = 0;
+}
+
 #undef LIST
 #undef ARRAY
 #endif

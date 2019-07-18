@@ -25,6 +25,7 @@ DEF_EQUAL(rcharacter, {
 #include "systems/input/input.h"
 #include "systems/movement/movement.h"
 #include "systems/collision/collision.h"
+#include "systems/attack/attack.h"
 
 
 typedef struct game {
@@ -34,6 +35,10 @@ typedef struct game {
     input *input;
     collision *collision;
     movement *movement;
+    attack *attack;
+
+    list_rcharacter *creation_list;
+    list_rcharacter *destroying_list;
 
     list_rcharacter *__all_characters;
 } game;
@@ -46,12 +51,11 @@ void game_update(game *this) {
     movement_move(this->movement);
     collision_check(this->collision);
 
-    FOREACH(rcharacter, rc, this->__all_characters) {
-        if (!rc->marked_for_delete) continue;
-
+    FOREACH(rcharacter, rc, this->destroying_list) {
         game_unregister(this, rc);
-        i--;
     }
+
+    list_rcharacter_clear(this->destroying_list);
 }
 
 void game_start(game *this) {
@@ -97,12 +101,16 @@ void game_unregister(game *this, character *item) {
 DEF_CTOR(game, (), {
     this->__all_characters = $(list_rcharacter)(10, 10);
 
+    this->creation_list = $(list_rcharacter)(10, 10);
+    this->destroying_list = $(list_rcharacter)(10, 10);
+
     vector output_area = $(vector)(640, 960);
 
     this->output = $(output)(output_area);
     this->input = $(input)(&this->active);
     this->movement = $(movement)(output_area);
-    this->collision = $(collision)();
+    this->collision = $(collision)(this->destroying_list);
+    this->attack = $(attack)();
 
     sprite sprite = sprite_load(this->output->renderer, "KickAss.bmp");
 
@@ -111,14 +119,16 @@ DEF_CTOR(game, (), {
             $(sprite_renderer)(sprite),
             $(position)($(vector)(100, 100)),
             $(movable)(10, false),
-            $(collider)(30, 10)));
+            $(collider)(30, 10),
+            $(attacking)($(vector)(0, -1))));
 
     game_register(this,
         $(character)(
             $(sprite_renderer)(sprite),
             $(position)($(vector)(300, 100)),
             $(movable)(0, true),
-            $(collider)(30, 1)));
+            $(collider)(30, 1),
+            $(attacking)($(vector)(0, 1))));
 
     register_control(this->input);
 })

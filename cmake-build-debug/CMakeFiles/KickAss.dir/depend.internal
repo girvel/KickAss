@@ -15,6 +15,8 @@ CMakeFiles/KickAss.dir/main.c.o
  /home/nik/CLionProjects/KickAss/hyper_c/macros.h
  /home/nik/CLionProjects/KickAss/hyper_c/usage.h
  /home/nik/CLionProjects/KickAss/main.c
+ /home/nik/CLionProjects/KickAss/systems/attack/attack.h
+ /home/nik/CLionProjects/KickAss/systems/attack/attacking.h
  /home/nik/CLionProjects/KickAss/systems/collision/collider.h
  /home/nik/CLionProjects/KickAss/systems/collision/collision.h
  /home/nik/CLionProjects/KickAss/systems/input/input.h
