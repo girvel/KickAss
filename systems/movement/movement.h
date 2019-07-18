@@ -37,17 +37,15 @@ void movement_move(movement *this) {
 
         if (rc->movable->can_leave_screen) continue;
 
-        vector offset = vector_divide(rc->sprite_renderer->sprite.size, -2);
-
         MAKE_MEDIAN(
             rc->position->vector.x,
-            offset.x,
-            this->border.x + offset.x)
+            0,
+            this->border.x)
 
         MAKE_MEDIAN(
             rc->position->vector.y,
-            offset.y,
-            this->border.y - offset.y)
+            0,
+            this->border.y)
     }
 }
 

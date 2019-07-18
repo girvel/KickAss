@@ -1,8 +1,6 @@
 #include "game.h"
 
-#define T vector
-#include "collections/list.h"
-#undef T
+DEF_NATIVE_EQUAL(int)
 
 int main() {
     USING(game, game, game_create(), {

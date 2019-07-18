@@ -64,7 +64,12 @@ SDL_Rect rect_construct(vector position, vector size) {
 }
 
 void output_sprite(output *this, sprite *sprite, position *position) {
-    SDL_Rect rect = rect_construct(position->vector, sprite->size);
+    SDL_Rect rect
+        = rect_construct(
+            vector_substract(
+                position->vector,
+                vector_divide(sprite->size, 2)),
+            sprite->size);
 
     SDL_RenderCopy(this->renderer, sprite->texture, NULL, &rect);
 }

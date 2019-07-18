@@ -97,7 +97,7 @@ void game_unregister(game *this, character *item) {
 DEF_CTOR(game, (), {
     this->__all_characters = $(list_rcharacter)(10, 10);
 
-    vector output_area = $(vector)(640, 480);
+    vector output_area = $(vector)(640, 960);
 
     this->output = $(output)(output_area);
     this->input = $(input)(&this->active);
