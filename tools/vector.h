@@ -7,6 +7,7 @@
 
 #include <SDL_rect.h>
 #include "../hyper_c.h"
+#include <stdlib.h>
 
 typedef struct {
     int x, y;
@@ -33,6 +34,18 @@ vector vector_add(vector v1, vector v2) {
         v1.x + v2.x,
         v1.y + v2.y
         );
+}
+
+vector vector_invert(vector this) {
+    return $(vector)(-this.x, -this.y);
+}
+
+vector vector_substract(vector v1, vector v2) {
+    return vector_add(v1, vector_invert(v2));
+}
+
+double vector_magnitude(vector this) {
+    return sqrt(this.x * this.x + this.y * this.y);
 }
 
 vector vector_multiply(int scalar, vector vector) {

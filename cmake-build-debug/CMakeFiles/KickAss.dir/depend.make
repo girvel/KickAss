@@ -6,6 +6,7 @@ CMakeFiles/KickAss.dir/main.c.o: ../collections/iteration.h
 CMakeFiles/KickAss.dir/main.c.o: ../collections/list.h
 CMakeFiles/KickAss.dir/main.c.o: ../collections/map.h
 CMakeFiles/KickAss.dir/main.c.o: ../collections/safe_array.h
+CMakeFiles/KickAss.dir/main.c.o: ../control.h
 CMakeFiles/KickAss.dir/main.c.o: ../game.h
 CMakeFiles/KickAss.dir/main.c.o: ../hyper_c.h
 CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/concatenation.h
@@ -13,6 +14,8 @@ CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/definition.h
 CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/macros.h
 CMakeFiles/KickAss.dir/main.c.o: ../hyper_c/usage.h
 CMakeFiles/KickAss.dir/main.c.o: ../main.c
+CMakeFiles/KickAss.dir/main.c.o: ../systems/collision/collider.h
+CMakeFiles/KickAss.dir/main.c.o: ../systems/collision/collision.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/input/input.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/movement/movable.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/movement/movement.h

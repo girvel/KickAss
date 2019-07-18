@@ -7,6 +7,7 @@ CMakeFiles/KickAss.dir/main.c.o
  /home/nik/CLionProjects/KickAss/collections/list.h
  /home/nik/CLionProjects/KickAss/collections/map.h
  /home/nik/CLionProjects/KickAss/collections/safe_array.h
+ /home/nik/CLionProjects/KickAss/control.h
  /home/nik/CLionProjects/KickAss/game.h
  /home/nik/CLionProjects/KickAss/hyper_c.h
  /home/nik/CLionProjects/KickAss/hyper_c/concatenation.h
@@ -14,6 +15,8 @@ CMakeFiles/KickAss.dir/main.c.o
  /home/nik/CLionProjects/KickAss/hyper_c/macros.h
  /home/nik/CLionProjects/KickAss/hyper_c/usage.h
  /home/nik/CLionProjects/KickAss/main.c
+ /home/nik/CLionProjects/KickAss/systems/collision/collider.h
+ /home/nik/CLionProjects/KickAss/systems/collision/collision.h
  /home/nik/CLionProjects/KickAss/systems/input/input.h
  /home/nik/CLionProjects/KickAss/systems/movement/movable.h
  /home/nik/CLionProjects/KickAss/systems/movement/movement.h

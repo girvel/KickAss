@@ -6,6 +6,7 @@
 #define KICKASS_DEFINITION_H
 
 #include <stdbool.h>
+#include <stdlib.h>
 #include "macros.h"
 
 #define DEF_CTOR(TYPE, ARGS, CODE) TYPE *_(TYPE, create) ARGS {\

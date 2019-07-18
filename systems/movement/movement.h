@@ -15,7 +15,9 @@ DEF_CTOR(movement, (), {
     this->subjects = $(list_rcharacter)(10, 10);
 })
 
-DEF_DTOR(movement, )
+DEF_DTOR(movement, {
+    list_rcharacter_destroy(this->subjects);
+})
 
 void movement_register(movement *this, rcharacter item) {
     list_rcharacter_add(this->subjects, item);

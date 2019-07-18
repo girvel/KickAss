@@ -8,6 +8,7 @@
 #include "systems/output/output.h"
 #include "systems/input/input.h"
 #include "systems/movement/movement.h"
+#include "systems/collision/collision.h"
 
 
 typedef struct game {
@@ -15,6 +16,7 @@ typedef struct game {
 
     output *output;
     input *input;
+    collision *collision;
     movement *movement;
 
     list_rcharacter *__all_characters;
@@ -24,19 +26,22 @@ void game_update(game *this) {
     output_display(this->output);
     input_read(this->input);
     movement_move(this->movement);
+    collision_check(this->collision);
 }
 
 void game_start(game *this) {
     while (this->active) {
         game_update(this);
 
-        SDL_Delay(1000 / 50);
+        SDL_Delay(10);
     }
 }
 
 void game_register(game *this, character *item) {
     output_register(this->output, item);
     movement_register(this->movement, item);
+    collision_register(this->collision, item);
+
     list_rcharacter_add(this->__all_characters, item);
 }
 
@@ -56,13 +61,23 @@ DEF_CTOR(game, (), {
     this->output = $(output)();
     this->input = $(input)(&this->active);
     this->movement = $(movement)();
+    this->collision = $(collision)();
+
+    SDL_Texture *texture = load_texture(this->output->renderer, "KickAss.bmp");
 
     game_register_player(this,
         $(character)(
-            $(sprite)(load_texture(this->output->renderer, "KickAss.bmp")),
+            $(sprite)(texture),
             $(position)($(vector)(100, 100)),
-            $(movable)(10)));
+            $(movable)(10),
+            $(collider)(30, 10)));
 
+    game_register(this,
+        $(character)(
+            $(sprite)(texture),
+            $(position)($(vector)(300, 100)),
+            $(movable)(0),
+            $(collider)(30, 1)));
 
     register_control(this->input);
 })

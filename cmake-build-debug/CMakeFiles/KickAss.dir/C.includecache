@@ -13,6 +13,8 @@ systems/placing/position.h
 /home/nik/CLionProjects/KickAss/systems/placing/position.h
 systems/movement/movable.h
 /home/nik/CLionProjects/KickAss/systems/movement/movable.h
+systems/collision/collider.h
+/home/nik/CLionProjects/KickAss/systems/collision/collider.h
 
 /home/nik/CLionProjects/KickAss/collections/iteration.h
 
@@ -40,6 +42,14 @@ stdlib.h
 stdbool.h
 -
 
+/home/nik/CLionProjects/KickAss/control.h
+hyper_c.h
+/home/nik/CLionProjects/KickAss/hyper_c.h
+systems/input/input.h
+/home/nik/CLionProjects/KickAss/systems/input/input.h
+SDL2/SDL.h
+/home/nik/CLionProjects/KickAss/SDL2/SDL.h
+
 /home/nik/CLionProjects/KickAss/game.h
 systems/output/output.h
 /home/nik/CLionProjects/KickAss/systems/output/output.h
@@ -47,6 +57,10 @@ systems/input/input.h
 /home/nik/CLionProjects/KickAss/systems/input/input.h
 systems/movement/movement.h
 /home/nik/CLionProjects/KickAss/systems/movement/movement.h
+systems/collision/collision.h
+/home/nik/CLionProjects/KickAss/systems/collision/collision.h
+control.h
+/home/nik/CLionProjects/KickAss/control.h
 
 /home/nik/CLionProjects/KickAss/hyper_c.h
 hyper_c/concatenation.h
@@ -63,6 +77,8 @@ hyper_c/usage.h
 /home/nik/CLionProjects/KickAss/hyper_c/definition.h
 stdbool.h
 -
+stdlib.h
+-
 macros.h
 /home/nik/CLionProjects/KickAss/hyper_c/macros.h
 
@@ -75,6 +91,12 @@ concatenation.h
 /home/nik/CLionProjects/KickAss/main.c
 game.h
 /home/nik/CLionProjects/KickAss/game.h
+
+/home/nik/CLionProjects/KickAss/systems/collision/collider.h
+../../hyper_c.h
+/home/nik/CLionProjects/KickAss/hyper_c.h
+
+/home/nik/CLionProjects/KickAss/systems/collision/collision.h
 
 /home/nik/CLionProjects/KickAss/systems/input/input.h
 SDL2/SDL.h
@@ -125,6 +147,8 @@ SDL_rect.h
 -
 ../hyper_c.h
 /home/nik/CLionProjects/KickAss/hyper_c.h
+stdlib.h
+-
 
 /usr/include/SDL2/SDL_config.h
 SDL_platform.h
