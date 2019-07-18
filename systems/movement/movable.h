@@ -10,11 +10,13 @@
 typedef struct {
     int potential_velocity;
     vector direction;
+    bool can_leave_screen;
 } movable;
 
-DEF_CTOR(movable, (int potential_velocity), {
+DEF_CTOR(movable, (int potential_velocity, bool can_leave_screen), {
     this->potential_velocity = potential_velocity;
     this->direction = vector_zero();
+    this->can_leave_screen = can_leave_screen;
 })
 
 DEF_DTOR(movable, )

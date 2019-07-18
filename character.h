@@ -13,7 +13,7 @@
 typedef struct {
     bool marked_for_delete;
 
-    sprite *sprite;
+    sprite_renderer *sprite_renderer;
     position *position;
     movable *movable;
     collider *collider;
@@ -21,8 +21,8 @@ typedef struct {
 
 typedef character* rcharacter;
 
-DEF_CTOR(character, (sprite *sprite, position *position, movable *movable, collider *collider), {
-    this->sprite = sprite;
+DEF_CTOR(character, (sprite_renderer *sprite_renderer, position *position, movable *movable, collider *collider), {
+    this->sprite_renderer = sprite_renderer;
     this->position = position;
     this->movable = movable;
     this->collider = collider;
@@ -31,7 +31,7 @@ DEF_CTOR(character, (sprite *sprite, position *position, movable *movable, colli
 })
 
 DEF_DTOR(character, {
-    sprite_destroy(this->sprite);
+    sprite_renderer_destroy(this->sprite_renderer);
     position_destroy(this->position);
     movable_destroy(this->movable);
     collider_destroy(this->collider);

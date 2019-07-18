@@ -17,15 +17,18 @@ typedef struct {
     SDL_Renderer *renderer;
 
     list_rcharacter *subjects;
+    vector size;
 } output;
 
-DEF_CTOR(output, (), {
+DEF_CTOR(output, (vector size), {
+    this->size = size;
+
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         printf("Error during SDL initialization: %s\n", SDL_GetError());
         return NULL;
     }
 
-    this->window = SDL_CreateWindow("KickAss", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
+    this->window = SDL_CreateWindow("KickAss", 100, 100, size.x, size.y, SDL_WINDOW_SHOWN);
 
     if (!this->window) {
         printf("Error during window creation: %s\n", SDL_GetError());
@@ -34,7 +37,7 @@ DEF_CTOR(output, (), {
 
     this->renderer = SDL_CreateRenderer(this->window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    if (!this->renderer){
+    if (!this->renderer) {
         printf("SDL_CreateRenderer Error: %s\n", SDL_GetError());
         return NULL;
     }
@@ -48,10 +51,21 @@ DEF_DTOR(output, {
     SDL_Quit();
 })
 
-void output_sprite(output *this, sprite *sprite, position *position) {
-    SDL_Rect rect = CAST(vector, position->vector, SDL_Rect);
+SDL_Rect rect_construct(vector position, vector size) {
+    SDL_Rect result;
 
-    SDL_QueryTexture(sprite->texture, NULL, NULL, &rect.w, &rect.h);
+    result.h = size.y;
+    result.w = size.x;
+
+    result.y = position.y;
+    result.x = position.x;
+
+    return result;
+}
+
+void output_sprite(output *this, sprite *sprite, position *position) {
+    SDL_Rect rect = rect_construct(position->vector, sprite->size);
+
     SDL_RenderCopy(this->renderer, sprite->texture, NULL, &rect);
 }
 
@@ -59,7 +73,7 @@ void output_display(output *this) {
     SDL_RenderClear(this->renderer);
 
     FOREACH (rcharacter, c, this->subjects) {
-        output_sprite(this, c->sprite, c->position);
+        output_sprite(this, c->sprite_renderer, c->position);
     }
 
     SDL_RenderPresent(this->renderer);

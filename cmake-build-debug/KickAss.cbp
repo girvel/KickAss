@@ -143,6 +143,9 @@
 		<Unit filename="/home/nik/CLionProjects/KickAss/systems/placing/position.h">
 			<Option target="KickAss"/>
 		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/tools/math.h">
+			<Option target="KickAss"/>
+		</Unit>
 		<Unit filename="/home/nik/CLionProjects/KickAss/tools/string.h">
 			<Option target="KickAss"/>
 		</Unit>

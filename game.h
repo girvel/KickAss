@@ -97,25 +97,27 @@ void game_unregister(game *this, character *item) {
 DEF_CTOR(game, (), {
     this->__all_characters = $(list_rcharacter)(10, 10);
 
-    this->output = $(output)();
+    vector output_area = $(vector)(640, 480);
+
+    this->output = $(output)(output_area);
     this->input = $(input)(&this->active);
-    this->movement = $(movement)();
+    this->movement = $(movement)(output_area);
     this->collision = $(collision)();
 
-    SDL_Texture *texture = load_texture(this->output->renderer, "KickAss.bmp");
+    sprite sprite = sprite_load(this->output->renderer, "KickAss.bmp");
 
     game_register_player(this,
         $(character)(
-            $(sprite)(texture),
+            $(sprite_renderer)(sprite),
             $(position)($(vector)(100, 100)),
-            $(movable)(10),
+            $(movable)(10, false),
             $(collider)(30, 10)));
 
     game_register(this,
         $(character)(
-            $(sprite)(texture),
+            $(sprite_renderer)(sprite),
             $(position)($(vector)(300, 100)),
-            $(movable)(0),
+            $(movable)(0, true),
             $(collider)(30, 1)));
 
     register_control(this->input);

@@ -20,11 +20,6 @@ DEF_VALUE_CTOR(vector, (int x, int y), {
 
 vector vector_zero() {return $(vector)(0, 0);}
 
-DEF_CAST(vector, SDL_Rect, {
-    other.x = this.x;
-    other.y = this.y;
-})
-
 DEF_EQUAL(vector, {
     return this.x == other.x && this.y == other.y;
 })
@@ -42,6 +37,10 @@ vector vector_invert(vector this) {
 
 vector vector_substract(vector v1, vector v2) {
     return vector_add(v1, vector_invert(v2));
+}
+
+vector vector_divide(vector this, int k) {
+    return $(vector)(this.x / k, this.y / k);
 }
 
 double vector_magnitude(vector this) {
