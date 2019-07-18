@@ -51,6 +51,12 @@ SDL2/SDL.h
 /home/nik/CLionProjects/KickAss/SDL2/SDL.h
 
 /home/nik/CLionProjects/KickAss/game.h
+hyper_c.h
+/home/nik/CLionProjects/KickAss/hyper_c.h
+character.h
+/home/nik/CLionProjects/KickAss/character.h
+collections/list.h
+/home/nik/CLionProjects/KickAss/collections/list.h
 systems/output/output.h
 /home/nik/CLionProjects/KickAss/systems/output/output.h
 systems/input/input.h
@@ -91,6 +97,8 @@ concatenation.h
 /home/nik/CLionProjects/KickAss/main.c
 game.h
 /home/nik/CLionProjects/KickAss/game.h
+collections/list.h
+/home/nik/CLionProjects/KickAss/collections/list.h
 
 /home/nik/CLionProjects/KickAss/systems/collision/collider.h
 ../../hyper_c.h
@@ -121,8 +129,6 @@ sprite.h
 /home/nik/CLionProjects/KickAss/systems/output/sprite.h
 ../../character.h
 /home/nik/CLionProjects/KickAss/character.h
-../../collections/list.h
-/home/nik/CLionProjects/KickAss/collections/list.h
 ../placing/position.h
 /home/nik/CLionProjects/KickAss/systems/placing/position.h
 

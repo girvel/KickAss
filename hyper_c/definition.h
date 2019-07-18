@@ -36,4 +36,6 @@
     CODE \
 }
 
+#define DEF_NATIVE_EQUAL(TYPE) DEF_EQUAL(TYPE, return this == other;)
+
 #endif //KICKASS_DEFINITION_H

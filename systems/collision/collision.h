@@ -21,6 +21,10 @@ void collision_register(collision *this, rcharacter item) {
     list_rcharacter_add(this->solids, item);
 }
 
+void collision_unregister(collision *this, rcharacter item) {
+    list_rcharacter_remove(this->solids, item);
+}
+
 void collision_check(collision *this) {
     FOREACH(rcharacter, solid, this->solids) {
         FOREACH(rcharacter, other, this->solids) {
@@ -32,7 +36,7 @@ void collision_check(collision *this) {
                         other->position->vector))
                         < solid->collider->radius + other->collider->radius) {
 
-                printf("Collision!\n");
+                solid->marked_for_delete = true;
             }
         }
     }

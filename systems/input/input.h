@@ -12,17 +12,14 @@
 
 /* Map generation begins */
 
-DEF_EQUAL(char, {
-    return this == other;
-})
-
-struct game;
-typedef struct game game;
-
 struct input;
 typedef struct input input;
 
 typedef void (*input_action)(input *input);
+
+DEF_NATIVE_EQUAL(char)
+DEF_NATIVE_EQUAL(input_action)
+
 #define TKEY char
 #define TVALUE input_action
 #include "../../collections/map.h"

@@ -56,6 +56,23 @@ void _(LIST, put) (LIST *this, ARRAY *array) {
     }
 }
 
+void _(LIST, remove_at) (LIST *this, size_t index) {
+    this->size--;
+    for (int i = index; i < this->size; i++) {
+        this->first[i] = this->first[i + 1];
+    }
+}
+
+bool _(LIST, remove) (LIST *this, T item) {
+    FOREACH(T, t, this) {
+        if (!EQUAL(T, t, item)) continue;
+        _(LIST, remove_at)(this, i);
+        return true;
+    }
+
+    return false;
+}
+
 #undef LIST
 #undef ARRAY
 #endif

@@ -11,6 +11,8 @@
 #include "systems/collision/collider.h"
 
 typedef struct {
+    bool marked_for_delete;
+
     sprite *sprite;
     position *position;
     movable *movable;
@@ -24,6 +26,8 @@ DEF_CTOR(character, (sprite *sprite, position *position, movable *movable, colli
     this->position = position;
     this->movable = movable;
     this->collider = collider;
+
+    this->marked_for_delete = false;
 })
 
 DEF_DTOR(character, {

@@ -8,12 +8,9 @@
 #include <SDL2/SDL.h>
 #include "sprite.h"
 #include "../../character.h"
-
-#define T rcharacter
-#include "../../collections/list.h"
 #include "../placing/position.h"
 
-#undef T
+
 
 typedef struct {
     SDL_Window *window;
@@ -70,6 +67,10 @@ void output_display(output *this) {
 
 void output_register(output *this, character *character) {
     list_rcharacter_add(this->subjects, character);
+}
+
+void output_unregister(output *this, character *character) {
+    list_rcharacter_remove(this->subjects, character);
 }
 
 #endif //KICKASS_OUTPUT_H

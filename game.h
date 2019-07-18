@@ -5,6 +5,22 @@
 #ifndef KICKASS_GAME_H
 #define KICKASS_GAME_H
 
+#include "hyper_c.h"
+#include "character.h"
+
+
+/* List generation begins */
+
+#define T rcharacter
+DEF_EQUAL(rcharacter, {
+    return this == other;
+})
+#include "collections/list.h"
+#undef T
+
+/* List generation ends */
+
+
 #include "systems/output/output.h"
 #include "systems/input/input.h"
 #include "systems/movement/movement.h"
@@ -22,11 +38,20 @@ typedef struct game {
     list_rcharacter *__all_characters;
 } game;
 
+void game_unregister(game*, rcharacter);
+
 void game_update(game *this) {
     output_display(this->output);
     input_read(this->input);
     movement_move(this->movement);
     collision_check(this->collision);
+
+    FOREACH(rcharacter, rc, this->__all_characters) {
+        if (!rc->marked_for_delete) continue;
+
+        game_unregister(this, rc);
+        i--;
+    }
 }
 
 void game_start(game *this) {
@@ -49,6 +74,20 @@ void game_register_player(game *this, character *item) {
     game_register(this, item);
 
     this->input->controllable = item;
+}
+
+void game_unregister(game *this, character *item) {
+    list_rcharacter_remove(this->__all_characters, item);
+
+    if (this->input->controllable == item) {
+        this->input->controllable = NULL;
+    }
+
+    output_unregister(this->output, item);
+    collision_unregister(this->collision, item);
+    movement_unregister(this->movement, item);
+
+    character_destroy(item);
 }
 
 

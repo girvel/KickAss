@@ -18,6 +18,10 @@ DEF_VALUE_CTOR(PAIR, (TKEY key, TVALUE value), {
     this.value = value;
 })
 
+DEF_EQUAL(PAIR, {
+    return EQUAL(TKEY, this.key, other.key) && EQUAL(TVALUE, this.value, other.value);
+})
+
 #define T PAIR
 #include "list.h"
 #undef T

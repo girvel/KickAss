@@ -23,6 +23,10 @@ void movement_register(movement *this, rcharacter item) {
     list_rcharacter_add(this->subjects, item);
 }
 
+void movement_unregister(movement *this, rcharacter item) {
+    list_rcharacter_remove(this->subjects, item);
+}
+
 void movement_move(movement *this) {
     FOREACH(rcharacter, rc, this->subjects) {
         INCREMENT(vector, rc->position->vector, movable_get_velocity(rc->movable));
