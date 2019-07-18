@@ -38,4 +38,8 @@
 
 #define DEF_NATIVE_EQUAL(TYPE) DEF_EQUAL(TYPE, return this == other;)
 
+#define DEF_CLONE(TYPE, CODE) TYPE *_(TYPE, clone)(TYPE *this) {\
+    CODE \
+}
+
 #endif //KICKASS_DEFINITION_H

@@ -7,14 +7,20 @@
 
 #include "../../tools/vector.h"
 
+struct character;
+typedef struct character character;
+
 typedef struct {
     vector attack_direction;
     bool attacks_now;
+
+    character *bullet;
 } attacking;
 
-DEF_CTOR(attacking, (vector attack_direction), {
+DEF_CTOR(attacking, (vector attack_direction, character *bullet), {
     this->attack_direction = attack_direction;
     this->attacks_now = false;
+    this->bullet = bullet;
 })
 
 DEF_DTOR(attacking, )

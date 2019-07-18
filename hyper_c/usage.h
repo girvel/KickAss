@@ -11,6 +11,8 @@
 
 #define EQUAL(TYPE, THIS, OTHER) _(TYPE, equals)(THIS, OTHER)
 
+#define CLONE(TYPE, VAR) _(TYPE, clone)(VAR)
+
 #define USING(TYPE, NAME, VALUE, CODE) { \
     TYPE *NAME = VALUE; \
     CODE \

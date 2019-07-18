@@ -43,20 +43,45 @@ typedef struct game {
     list_rcharacter *__all_characters;
 } game;
 
+
 void game_unregister(game*, rcharacter);
 
-void game_update(game *this) {
-    output_display(this->output);
-    input_read(this->input);
-    movement_move(this->movement);
-    collision_check(this->collision);
-
+void game_destroy_by_list(game *this) {
     FOREACH(rcharacter, rc, this->destroying_list) {
         game_unregister(this, rc);
     }
 
     list_rcharacter_clear(this->destroying_list);
 }
+
+
+void game_register(game*, rcharacter);
+
+
+void game_create_by_list(game *this) {
+    FOREACH(rcharacter, rc, this->creation_list) {
+        game_register(this, rc);
+    }
+
+    list_rcharacter_clear(this->creation_list);
+}
+
+
+void game_update_systems(game *this) {
+    output_display(this->output);
+    input_read(this->input);
+    movement_move(this->movement);
+    collision_check(this->collision);
+    attack_create_bullets(this->attack);
+}
+
+
+void game_update(game *this) {
+    game_update_systems(this);
+    game_destroy_by_list(this);
+    game_create_by_list(this);
+}
+
 
 void game_start(game *this) {
     while (this->active) {
@@ -70,6 +95,7 @@ void game_register(game *this, character *item) {
     output_register(this->output, item);
     movement_register(this->movement, item);
     collision_register(this->collision, item);
+    attack_register(this->attack, item);
 
     list_rcharacter_add(this->__all_characters, item);
 }
@@ -90,6 +116,7 @@ void game_unregister(game *this, character *item) {
     output_unregister(this->output, item);
     collision_unregister(this->collision, item);
     movement_unregister(this->movement, item);
+    attack_unregister(this->attack, item);
 
     character_destroy(item);
 }
@@ -110,9 +137,16 @@ DEF_CTOR(game, (), {
     this->input = $(input)(&this->active);
     this->movement = $(movement)(output_area);
     this->collision = $(collision)(this->destroying_list);
-    this->attack = $(attack)();
+    this->attack = $(attack)(this->creation_list);
 
     sprite sprite = sprite_load(this->output->renderer, "KickAss.bmp");
+
+    rcharacter enemy = $(character)(
+        $(sprite_renderer)(sprite),
+        $(position)($(vector)(300, 100)),
+        $(movable)(0, true),
+        $(collider)(30, 1),
+        $(attacking)($(vector)(0, 1), NULL));
 
     game_register_player(this,
         $(character)(
@@ -120,15 +154,7 @@ DEF_CTOR(game, (), {
             $(position)($(vector)(100, 100)),
             $(movable)(10, false),
             $(collider)(30, 10),
-            $(attacking)($(vector)(0, -1))));
-
-    game_register(this,
-        $(character)(
-            $(sprite_renderer)(sprite),
-            $(position)($(vector)(300, 100)),
-            $(movable)(0, true),
-            $(collider)(30, 1),
-            $(attacking)($(vector)(0, 1))));
+            $(attacking)($(vector)(0, -1), enemy)));
 
     register_control(this->input);
 })

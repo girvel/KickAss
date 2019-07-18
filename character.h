@@ -11,7 +11,7 @@
 #include "systems/collision/collider.h"
 #include "systems/attack/attacking.h"
 
-typedef struct {
+typedef struct character {
     sprite_renderer *sprite_renderer;
     position *position;
     movable *movable;
@@ -40,6 +40,15 @@ DEF_DTOR(character, {
     position_destroy(this->position);
     movable_destroy(this->movable);
     collider_destroy(this->collider);
+})
+
+DEF_CLONE(character, {
+    return $(character)(
+        MEMBERWISE_CLONE(sprite_renderer, this->sprite_renderer),
+        MEMBERWISE_CLONE(position, this->position),
+        MEMBERWISE_CLONE(movable, this->movable),
+        MEMBERWISE_CLONE(collider, this->collider),
+        MEMBERWISE_CLONE(attacking, this->attacking));
 })
 
 #endif //KICKASS_CHARACTER_H

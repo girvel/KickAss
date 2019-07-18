@@ -32,6 +32,10 @@ void escape(input *input) {
     *input->game_active = false;
 }
 
+void attack_(input *input) {
+    input->controllable->attacking->attacks_now = true;
+}
+
 
 #define REGISTER_DOWN(METHOD, KEY) _(CONTROL_MAP, add)(input->control_press, KEY, &METHOD);
 #define REGISTER_UP(METHOD, KEY) _(CONTROL_MAP, add)(input->control_release, KEY, &METHOD);
@@ -46,6 +50,7 @@ void register_control(input *input) {
     REGISTER_MOVE(right,    'd')
 
     REGISTER_DOWN(escape, SDLK_ESCAPE)
+    REGISTER_DOWN(attack_, SDLK_SPACE)
 }
 
 #undef REGISTER_MOVE

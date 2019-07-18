@@ -15,4 +15,6 @@
 
 #define INCREMENT(TYPE, VARIABLE, SIZE) VARIABLE = _(TYPE, add)(VARIABLE, SIZE)
 
+#define MEMBERWISE_CLONE(TYPE, VAR) ({ALLOCATE_VAR(TYPE, clone); *clone = *VAR; clone;})
+
 #endif //KICKASS_MACROS_H
