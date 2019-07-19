@@ -19,11 +19,14 @@ typedef struct {
     list_rcharacter *subjects;
     vector size;
 
+    float background_speed, background_offset;
     sprite background;
 } output;
 
-DEF_CTOR(output, (vector size), {
+DEF_CTOR(output, (vector size, float background_speed), {
     this->size = size;
+    this->background_speed = background_speed;
+    this->background_offset = 0;
 
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         printf("Error during SDL initialization: %s\n", SDL_GetError());
@@ -81,9 +84,13 @@ void output_sprite(output *this, sprite sprite, vector position) {
 void output_display(output *this) {
     SDL_RenderClear(this->renderer);
 
+    this->background_offset += this->background_speed;
+    float dummy;
+    this->background_offset = modff(this->background_offset, &dummy);
+
     for (int x = 0; x < ((float) this->size.x) / this->background.size.x; x++) {
-        for (int y = 0; y < ((float) this->size.y) / this->background.size.y; y++) {
-            output_sprite(this, this->background, vector_scale(this->background.size, x, y));
+        for (int y = -1; y < ((float) this->size.y) / this->background.size.y + 1; y++) {
+            output_sprite(this, this->background, vector_scale(this->background.size, x, y + this->background_offset));
         }
     }
 

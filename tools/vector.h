@@ -43,10 +43,10 @@ vector vector_divide(vector this, int k) {
     return $(vector)(this.x / k, this.y / k);
 }
 
-vector vector_scale(vector v1, int kx, int ky) {
+vector vector_scale(vector v1, float kx, float ky) {
     return $(vector)(
-        v1.x * kx,
-        v1.y * ky
+        (int) (v1.x * kx),
+        (int) (v1.y * ky)
         );
 }
 

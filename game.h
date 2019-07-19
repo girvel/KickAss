@@ -133,7 +133,7 @@ DEF_CTOR(game, (), {
 
     vector output_area = $(vector)(640, 960);
 
-    this->output = $(output)(output_area);
+    this->output = $(output)(output_area, 0.005f);
     this->input = $(input)(&this->active);
     this->movement = $(movement)(output_area);
     this->collision = $(collision)(this->destroying_list);
