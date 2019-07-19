@@ -26,21 +26,25 @@ DEF_EQUAL(rcharacter, {
 #include "systems/movement/movement.h"
 #include "systems/collision/collision.h"
 #include "systems/attack/attack.h"
+#include "systems/generation/generation.h"
 
+#define SYSTEM(TYPE) TYPE *TYPE;
 
 typedef struct game {
     bool active;
 
-    output *output;
-    input *input;
-    collision *collision;
-    movement *movement;
-    attack *attack;
+    SYSTEM(output)
+    SYSTEM(input)
+    SYSTEM(collision)
+    SYSTEM(movement)
+    SYSTEM(attack)
+    SYSTEM(generation)
 
     list_rcharacter *creation_list;
     list_rcharacter *destroying_list;
 
     list_rcharacter *__all_characters;
+    list_rcharacter *__all_prototypes;
 } game;
 
 
@@ -73,6 +77,7 @@ void game_update_systems(game *this) {
     movement_move(this->movement);
     collision_check(this->collision);
     attack_create_bullets(this->attack);
+    generation_update(this->generation);
 }
 
 
@@ -125,8 +130,12 @@ void game_unregister(game *this, character *item) {
 #define CONTROL_MAP map_char_input_action
 #include "control.h"
 
-DEF_CTOR(game, (), {
+//DEF_CTOR(game, (), {
+game *game_create() {
+    ALLOCATE_VAR(game, this);
+
     this->__all_characters = $(list_rcharacter)(10, 10);
+    this->__all_prototypes = $(list_rcharacter)(10, 10);
 
     this->creation_list = $(list_rcharacter)(10, 10);
     this->destroying_list = $(list_rcharacter)(10, 10);
@@ -139,17 +148,31 @@ DEF_CTOR(game, (), {
     this->collision = $(collision)(this->destroying_list);
     this->attack = $(attack)(this->creation_list);
 
-    this->output->background = sprite_load(this->output->renderer, "Background.bmp", false);
-
-    sprite player_sprite = sprite_load(this->output->renderer, "KickAss.bmp", true);
-    sprite bullet_sprite = sprite_load(this->output->renderer, "Bullet.bmp", true);
-
-    rcharacter player_bullet = $(character)(
-        $(sprite_renderer)(bullet_sprite),
+    rcharacter bullet = $(character)(
+        $(sprite_renderer)(sprite_load(this->output->renderer, "Bullet.bmp", true)),
         $(position)(vector_zero()),
         $(movable)(20, true),
         $(collider)(3, 9),
         NULL);
+    list_rcharacter_add(this->__all_prototypes, bullet);
+
+    rcharacter enemy_bullet = CLONE(character, bullet);
+    enemy_bullet->movable->potential_velocity = 5;
+    list_rcharacter_add(this->__all_prototypes, enemy_bullet);
+
+    rcharacter enemy = $(character)(
+        $(sprite_renderer)(sprite_load(this->output->renderer, "KickAss.bmp", true)),
+        $(position)(vector_zero()),
+        $(movable)(20, true),
+        $(collider)(25, 9),
+        $(attacking)($(vector)(0, 1), enemy_bullet));
+    list_rcharacter_add(this->__all_prototypes, enemy);
+
+    this->generation = $(generation)(this->creation_list, enemy, 500.0f, 0.9f, output_area.x);
+
+    this->output->background = sprite_load(this->output->renderer, "Background.bmp", false);
+
+    sprite player_sprite = sprite_load(this->output->renderer, "KickAss.bmp", true);
 
     game_register_player(this,
         $(character)(
@@ -157,14 +180,20 @@ DEF_CTOR(game, (), {
             $(position)($(vector)(100, 100)),
             $(movable)(10, false),
             $(collider)(10, 10),
-            $(attacking)($(vector)(0, -1), player_bullet)));
+            $(attacking)($(vector)(0, -1), bullet)));
 
     register_control(this->input);
-})
+
+    return this;
+}
 
 DEF_DTOR(game, {
     FOREACH (rcharacter, rc, this->__all_characters) {
         character_destroy(rc);
+    }
+
+    FOREACH (rcharacter, rp, this->__all_prototypes) {
+        character_destroy(rp);
     }
 
     output_destroy(this->output);
