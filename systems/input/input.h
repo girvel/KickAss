@@ -9,7 +9,6 @@
 #include "../../hyper_c.h"
 
 
-
 /* Map generation begins */
 
 struct input;
@@ -52,9 +51,10 @@ DEF_DTOR(input, )
 void input_read(input *this) {
     SDL_Event event;
 
+    if (this->controllable == NULL) {*this->game_active = false; return;}
+
     while(SDL_PollEvent(&event)) {
-        if (this->controllable != NULL
-            && (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)) {
+        if ((event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)) {
             printf("Key change detected\n");
 
             input_action action;

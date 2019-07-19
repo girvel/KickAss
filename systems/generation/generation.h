@@ -6,21 +6,24 @@
 #define KICKASS_GENERATION_H
 
 #include "../../hyper_c.h"
+#include "../ai/ai.h"
 
 typedef struct {
     float current_delay, delay, step;
     int width;
 
     list_rcharacter *creation_list;
+    ai *ai;
     rcharacter enemy_prototype;
 } generation;
 
-DEF_CTOR(generation, (list_rcharacter *creation_list, rcharacter enemy_prototype, float start_delay, float step, int width), {
+DEF_CTOR(generation, (list_rcharacter *creation_list, rcharacter enemy_prototype, ai *ai, float start_delay, float step, int width), {
     this->creation_list = creation_list;
     this->enemy_prototype = enemy_prototype;
+    this->ai = ai;
 
     this->delay = start_delay;
-    this->current_delay = 0;
+    this->current_delay = start_delay;
     this->step = step;
     this->width = width;
 })
@@ -37,6 +40,9 @@ void generation_update(generation *this) {
         rcharacter clone = CLONE(character, this->enemy_prototype);
         list_rcharacter_add(this->creation_list, clone);
         clone->position->vector = $(vector)(rand() % this->width, 0);
+        clone->movable->direction = $(vector)(0, 1);
+
+        ai_register(this->ai, clone);
     }
 }
 

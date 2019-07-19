@@ -119,6 +119,9 @@
 		<Unit filename="/home/nik/CLionProjects/KickAss/main.c">
 			<Option target="KickAss"/>
 		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/systems/ai/ai.h">
+			<Option target="KickAss"/>
+		</Unit>
 		<Unit filename="/home/nik/CLionProjects/KickAss/systems/attack/attack.h">
 			<Option target="KickAss"/>
 		</Unit>

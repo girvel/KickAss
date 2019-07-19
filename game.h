@@ -27,6 +27,7 @@ DEF_EQUAL(rcharacter, {
 #include "systems/collision/collision.h"
 #include "systems/attack/attack.h"
 #include "systems/generation/generation.h"
+#include "systems/ai/ai.h"
 
 #define SYSTEM(TYPE) TYPE *TYPE;
 
@@ -39,6 +40,7 @@ typedef struct game {
     SYSTEM(movement)
     SYSTEM(attack)
     SYSTEM(generation)
+    SYSTEM(ai)
 
     list_rcharacter *creation_list;
     list_rcharacter *destroying_list;
@@ -78,6 +80,7 @@ void game_update_systems(game *this) {
     collision_check(this->collision);
     attack_create_bullets(this->attack);
     generation_update(this->generation);
+    ai_update(this->ai);
 }
 
 
@@ -122,6 +125,7 @@ void game_unregister(game *this, character *item) {
     collision_unregister(this->collision, item);
     movement_unregister(this->movement, item);
     if (item->attacking != NULL) attack_unregister(this->attack, item);
+    ai_unregister(this->ai, item);
 
     character_destroy(item);
 }
@@ -152,7 +156,7 @@ game *game_create() {
         $(sprite_renderer)(sprite_load(this->output->renderer, "Bullet.bmp", true)),
         $(position)(vector_zero()),
         $(movable)(20, true),
-        $(collider)(3, 9),
+        $(collider)(3, 15),
         NULL);
     list_rcharacter_add(this->__all_prototypes, bullet);
 
@@ -161,22 +165,21 @@ game *game_create() {
     list_rcharacter_add(this->__all_prototypes, enemy_bullet);
 
     rcharacter enemy = $(character)(
-        $(sprite_renderer)(sprite_load(this->output->renderer, "KickAss.bmp", true)),
+        $(sprite_renderer)(sprite_load(this->output->renderer, "Enemy.bmp", true)),
         $(position)(vector_zero()),
-        $(movable)(20, true),
+        $(movable)(3, true),
         $(collider)(25, 9),
         $(attacking)($(vector)(0, 1), enemy_bullet));
     list_rcharacter_add(this->__all_prototypes, enemy);
 
-    this->generation = $(generation)(this->creation_list, enemy, 500.0f, 0.9f, output_area.x);
+    this->ai = $(ai)(150);
+    this->generation = $(generation)(this->creation_list, enemy, this->ai, 350.0f, 0.9f, output_area.x);
 
     this->output->background = sprite_load(this->output->renderer, "Background.bmp", false);
 
-    sprite player_sprite = sprite_load(this->output->renderer, "KickAss.bmp", true);
-
     game_register_player(this,
         $(character)(
-            $(sprite_renderer)(player_sprite),
+            $(sprite_renderer)(sprite_load(this->output->renderer, "KickAss.bmp", true)),
             $(position)($(vector)(100, 100)),
             $(movable)(10, false),
             $(collider)(10, 10),
