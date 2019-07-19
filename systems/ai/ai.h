@@ -17,7 +17,9 @@ DEF_CTOR(ai, (int attack_delay), {
     this->current_attack_delay = 0;
 })
 
-DEF_DTOR(ai, )
+DEF_DTOR(ai, {
+    list_rcharacter_destroy(this->subjects);
+})
 
 void ai_register(ai *this, rcharacter item) {
     list_rcharacter_add(this->subjects, item);

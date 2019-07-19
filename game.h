@@ -28,6 +28,7 @@ DEF_EQUAL(rcharacter, {
 #include "systems/attack/attack.h"
 #include "systems/generation/generation.h"
 #include "systems/ai/ai.h"
+#include "systems/health/health_system.h"
 
 #define SYSTEM(TYPE) TYPE *TYPE;
 
@@ -41,6 +42,7 @@ typedef struct game {
     SYSTEM(attack)
     SYSTEM(generation)
     SYSTEM(ai)
+    SYSTEM(health_system)
 
     list_rcharacter *creation_list;
     list_rcharacter *destroying_list;
@@ -81,6 +83,7 @@ void game_update_systems(game *this) {
     attack_create_bullets(this->attack);
     generation_update(this->generation);
     ai_update(this->ai);
+    health_system_update(this->health_system);
 }
 
 
@@ -103,6 +106,7 @@ void game_register(game *this, character *item) {
     output_register(this->output, item);
     movement_register(this->movement, item);
     collision_register(this->collision, item);
+    if (item->health != NULL) health_system_register(this->health_system, item);
     if (item->attacking != NULL) attack_register(this->attack, item);
 
     list_rcharacter_add(this->__all_characters, item);
@@ -124,6 +128,7 @@ void game_unregister(game *this, character *item) {
     output_unregister(this->output, item);
     collision_unregister(this->collision, item);
     movement_unregister(this->movement, item);
+    if (item->health != NULL) health_system_unregister(this->health_system, item);
     if (item->attacking != NULL) attack_unregister(this->attack, item);
     ai_unregister(this->ai, item);
 
@@ -149,15 +154,17 @@ game *game_create() {
     this->output = $(output)(output_area, 0.005f);
     this->input = $(input)(&this->active);
     this->movement = $(movement)(output_area);
-    this->collision = $(collision)(this->destroying_list);
+    this->collision = $(collision)();
     this->attack = $(attack)(this->creation_list);
+    this->health_system = $(health_system)(this->destroying_list);
 
     rcharacter bullet = $(character)(
         $(sprite_renderer)(sprite_load(this->output->renderer, "Bullet.bmp", true)),
         $(position)(vector_zero()),
         $(movable)(20, true),
         $(collider)(3, 15),
-        NULL);
+        NULL,
+        $(health)(1, false));
     list_rcharacter_add(this->__all_prototypes, bullet);
 
     rcharacter enemy_bullet = CLONE(character, bullet);
@@ -169,7 +176,8 @@ game *game_create() {
         $(position)(vector_zero()),
         $(movable)(3, true),
         $(collider)(25, 9),
-        $(attacking)($(vector)(0, 1), enemy_bullet));
+        $(attacking)($(vector)(0, 1), enemy_bullet),
+        $(health)(1, false));
     list_rcharacter_add(this->__all_prototypes, enemy);
 
     this->ai = $(ai)(150);
@@ -183,7 +191,8 @@ game *game_create() {
             $(position)($(vector)(100, 100)),
             $(movable)(10, false),
             $(collider)(10, 10),
-            $(attacking)($(vector)(0, -1), bullet)));
+            $(attacking)($(vector)(0, -1), bullet),
+            $(health)(100, true)));
 
     register_control(this->input);
 

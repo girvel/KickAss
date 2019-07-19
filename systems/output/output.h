@@ -84,6 +84,8 @@ void output_sprite(output *this, sprite sprite, vector position) {
 void output_display(output *this) {
     SDL_RenderClear(this->renderer);
 
+    // Background
+
     this->background_offset += this->background_speed;
     float dummy;
     this->background_offset = modff(this->background_offset, &dummy);
@@ -94,9 +96,27 @@ void output_display(output *this) {
         }
     }
 
+    // Sprites
+
     FOREACH (rcharacter, c, this->subjects) {
         output_sprite(this, c->sprite_renderer->sprite, c->position->vector);
+
+        if (!c->health->is_visible) continue;
+
+        SDL_Rect hp_rect =
+            rect_construct(
+                vector_substract(
+                    c->position->vector,
+                    vector_scale(c->sprite_renderer->sprite.size, 0.5f, 0.5f)),
+                $(vector)(
+                    (int) (c->sprite_renderer->sprite.size.x * ((float) c->health->hp / c->health->max_hp)),
+                    6));
+
+        SDL_SetRenderDrawColor(this->renderer, 0, 255, 0, 0);
+        SDL_RenderDrawRect(this->renderer, &hp_rect);
     }
+
+    //
 
     SDL_RenderPresent(this->renderer);
 }

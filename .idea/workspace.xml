@@ -11,19 +11,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a58b9b1-c099-4948-88be-b3ca60d4283f" name="Default Changelist" comment="Add enemy be">
-      <change afterPath="$PROJECT_DIR$/systems/ai/ai.h" afterDir="false" />
+    <list default="true" id="7a58b9b1-c099-4948-88be-b3ca60d4283f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/systems/health/health.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/systems/health/health_system.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KickAss.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KickAss.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KickAss.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KickAss.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KickAss.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KickAss.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/KickAss" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/KickAss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/character.h" beforeDir="false" afterPath="$PROJECT_DIR$/character.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/KickAss.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/KickAss.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systems/generation/generation.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/generation/generation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systems/input/input.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/input/input.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systems/output/sprite.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/output/sprite.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systems/ai/ai.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/ai/ai.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systems/collision/collision.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/collision/collision.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systems/output/output.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/output/output.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,10 +62,34 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/systems/output/output.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="486">
+                  <caret line="111" column="107" selection-start-line="111" selection-start-column="107" selection-end-line="111" selection-end-column="107" />
+                  <folding>
+                    <element signature="e#89#110#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/collections/list.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="580">
+                  <caret line="45" selection-start-line="45" selection-end-line="45" />
+                  <folding>
+                    <element signature="e#47#70#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/systems/generation/generation.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+                <state relative-caret-position="380">
+                  <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
                   <folding>
                     <element signature="e#0#2#0" />
                     <element signature="e#97#123#0" expanded="true" />
@@ -77,10 +99,22 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/systems/ai/ai.h">
+            <entry file="file://$PROJECT_DIR$/character.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="214">
-                  <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+                <state relative-caret-position="560">
+                  <caret line="49" selection-start-line="49" selection-end-line="49" />
+                  <folding>
+                    <element signature="e#95#129#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/systems/health/health_system.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="234">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
                 </state>
               </provider>
             </entry>
@@ -92,8 +126,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/game.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="159" column="14" selection-start-line="159" selection-start-column="14" selection-end-line="159" selection-end-column="14" />
+                <state relative-caret-position="-2">
+                  <caret line="159" selection-start-line="159" selection-end-line="159" />
                   <folding>
                     <element signature="e#0#2#0" />
                     <element signature="e#85#105#0" expanded="true" />
@@ -110,13 +144,34 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/systems/collision/collision.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="526">
+                  <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/systems/output/sprite.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
-                  <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+                <state relative-caret-position="200">
+                  <caret line="10" selection-start-line="10" selection-end-line="10" />
                   <folding>
                     <element signature="e#38#59#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/systems/health/health.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="280">
+                  <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+                  <folding>
+                    <element signature="e#89#109#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -173,7 +228,6 @@
         <option value="$PROJECT_DIR$/tools/math.h" />
         <option value="$PROJECT_DIR$/systems/movement/movement.h" />
         <option value="$PROJECT_DIR$/systems/attack/attackable.h" />
-        <option value="$PROJECT_DIR$/systems/collision/collision.h" />
         <option value="$PROJECT_DIR$/collections/iteration.h" />
         <option value="$PROJECT_DIR$/collections/list.h" />
         <option value="$PROJECT_DIR$/main.c" />
@@ -181,16 +235,19 @@
         <option value="$PROJECT_DIR$/control.h" />
         <option value="$PROJECT_DIR$/hyper_c/definition.h" />
         <option value="$PROJECT_DIR$/hyper_c/usage.h" />
-        <option value="$PROJECT_DIR$/character.h" />
         <option value="$PROJECT_DIR$/systems/attack/attack.h" />
         <option value="$PROJECT_DIR$/hyper_c/macros.h" />
         <option value="$PROJECT_DIR$/tools/vector.h" />
-        <option value="$PROJECT_DIR$/systems/output/output.h" />
-        <option value="$PROJECT_DIR$/systems/ai/ai.h" />
         <option value="$PROJECT_DIR$/systems/input/input.h" />
         <option value="$PROJECT_DIR$/systems/generation/generation.h" />
-        <option value="$PROJECT_DIR$/game.h" />
         <option value="$PROJECT_DIR$/systems/output/sprite.h" />
+        <option value="$PROJECT_DIR$/systems/ai/ai.h" />
+        <option value="$PROJECT_DIR$/character.h" />
+        <option value="$PROJECT_DIR$/game.h" />
+        <option value="$PROJECT_DIR$/systems/collision/collision.h" />
+        <option value="$PROJECT_DIR$/systems/health/health_system.h" />
+        <option value="$PROJECT_DIR$/systems/health/health.h" />
+        <option value="$PROJECT_DIR$/systems/output/output.h" />
       </list>
     </option>
   </component>
@@ -242,7 +299,19 @@
               <item name="KickAss" type="b2602c69:ProjectViewProjectNode" />
               <item name="KickAss" type="462c0819:PsiDirectoryNode" />
               <item name="systems" type="462c0819:PsiDirectoryNode" />
+              <item name="health" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KickAss" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KickAss" type="462c0819:PsiDirectoryNode" />
+              <item name="systems" type="462c0819:PsiDirectoryNode" />
               <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KickAss" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KickAss" type="462c0819:PsiDirectoryNode" />
+              <item name="systems" type="462c0819:PsiDirectoryNode" />
+              <item name="movement" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KickAss" type="b2602c69:ProjectViewProjectNode" />
@@ -270,11 +339,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/systems/health" />
       <recent name="$PROJECT_DIR$/systems" />
       <recent name="$PROJECT_DIR$/systems/movement" />
       <recent name="$PROJECT_DIR$/sdl" />
       <recent name="$PROJECT_DIR$/collections" />
-      <recent name="$PROJECT_DIR$/string" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -328,7 +397,7 @@
       <workItem from="1563471482371" duration="4752000" />
       <workItem from="1563484248992" duration="7585000" />
       <workItem from="1563528166043" duration="1376000" />
-      <workItem from="1563531346790" duration="6025000" />
+      <workItem from="1563531346790" duration="8218000" />
     </task>
     <task id="LOCAL-00001" summary="Realize control map">
       <created>1563016661690</created>
@@ -442,11 +511,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563535575580</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add enemy behaviour">
+      <created>1563537412231</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1563537412231</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87832000" />
+    <option name="totallyTimeSpent" value="90025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="2560" height="1084" extended-state="6" />
@@ -495,7 +571,8 @@
     <MESSAGE value="Add graphics" />
     <MESSAGE value="Realize background movement" />
     <MESSAGE value="Add basic enemy generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add basic enemy generation" />
+    <MESSAGE value="Add enemy behaviour" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add enemy behaviour" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -670,37 +747,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/systems/movement/movement.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#93#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/systems/collision/collision.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/collections/iteration.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collections/list.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-          <folding>
-            <element signature="e#47#70#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -735,16 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/character.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
-          <folding>
-            <element signature="e#95#129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hyper_c/definition.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
@@ -772,23 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/systems/output/output.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="86" column="48" lean-forward="true" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
-          <folding>
-            <element signature="e#89#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/systems/movement/movable.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -806,17 +829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/systems/ai/ai.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/systems/generation/generation.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        <state relative-caret-position="380">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding>
             <element signature="e#0#2#0" />
             <element signature="e#97#123#0" expanded="true" />
@@ -824,10 +840,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/systems/movement/movement.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#93#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systems/ai/ai.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systems/output/sprite.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#38#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collections/list.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#47#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/character.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#95#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="159" column="14" selection-start-line="159" selection-start-column="14" selection-end-line="159" selection-end-column="14" />
+        <state relative-caret-position="-2">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
           <folding>
             <element signature="e#0#2#0" />
             <element signature="e#85#105#0" expanded="true" />
@@ -843,12 +913,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/systems/output/sprite.h">
+    <entry file="file://$PROJECT_DIR$/systems/collision/collision.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="526">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systems/health/health_system.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systems/health/health.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="e#38#59#0" expanded="true" />
+            <element signature="e#89#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systems/output/output.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="111" column="107" selection-start-line="111" selection-start-column="107" selection-end-line="111" selection-end-column="107" />
+          <folding>
+            <element signature="e#89#110#0" expanded="true" />
           </folding>
         </state>
       </provider>

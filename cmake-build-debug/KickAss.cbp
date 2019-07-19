@@ -137,6 +137,12 @@
 		<Unit filename="/home/nik/CLionProjects/KickAss/systems/generation/generation.h">
 			<Option target="KickAss"/>
 		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/systems/health/health.h">
+			<Option target="KickAss"/>
+		</Unit>
+		<Unit filename="/home/nik/CLionProjects/KickAss/systems/health/health_system.h">
+			<Option target="KickAss"/>
+		</Unit>
 		<Unit filename="/home/nik/CLionProjects/KickAss/systems/input/input.h">
 			<Option target="KickAss"/>
 		</Unit>
