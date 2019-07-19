@@ -10,11 +10,15 @@
 typedef struct {
     int radius;
     int durability;
+
+    bool is_healer;
 } collider;
 
 DEF_CTOR(collider, (int radius, int durability), {
     this->radius = radius;
     this->durability = durability;
+
+    this->is_healer = false;
 })
 
 DEF_DTOR(collider, )

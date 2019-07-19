@@ -180,8 +180,18 @@ game *game_create() {
         $(health)(1, false));
     list_rcharacter_add(this->__all_prototypes, enemy);
 
+    rcharacter healer = $(character)(
+        $(sprite_renderer)(sprite_load(this->output->renderer, "Healer.bmp", true)),
+        $(position)(vector_zero()),
+        $(movable)(2, true),
+        $(collider)(25, 25),
+        NULL,
+        $(health)(1, false));
+    healer->collider->is_healer = true;
+    list_rcharacter_add(this->__all_prototypes, healer);
+
     this->ai = $(ai)(150);
-    this->generation = $(generation)(this->creation_list, enemy, this->ai, 350.0f, 0.9f, output_area.x);
+    this->generation = $(generation)(this->creation_list, enemy, healer, this->ai, 350.0f, 0.9f, output_area.x);
 
     this->output->background = sprite_load(this->output->renderer, "Background.bmp", false);
 

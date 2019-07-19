@@ -20,6 +20,8 @@ CMakeFiles/KickAss.dir/main.c.o: ../systems/attack/attacking.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/collision/collider.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/collision/collision.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/generation/generation.h
+CMakeFiles/KickAss.dir/main.c.o: ../systems/health/health.h
+CMakeFiles/KickAss.dir/main.c.o: ../systems/health/health_system.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/input/input.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/movement/movable.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/movement/movement.h

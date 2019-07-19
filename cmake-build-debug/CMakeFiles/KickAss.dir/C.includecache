@@ -17,6 +17,8 @@ systems/collision/collider.h
 /home/nik/CLionProjects/KickAss/systems/collision/collider.h
 systems/attack/attacking.h
 /home/nik/CLionProjects/KickAss/systems/attack/attacking.h
+systems/health/health.h
+/home/nik/CLionProjects/KickAss/systems/health/health.h
 
 /home/nik/CLionProjects/KickAss/collections/iteration.h
 
@@ -73,6 +75,8 @@ systems/generation/generation.h
 /home/nik/CLionProjects/KickAss/systems/generation/generation.h
 systems/ai/ai.h
 /home/nik/CLionProjects/KickAss/systems/ai/ai.h
+systems/health/health_system.h
+/home/nik/CLionProjects/KickAss/systems/health/health_system.h
 control.h
 /home/nik/CLionProjects/KickAss/control.h
 
@@ -127,6 +131,16 @@ game.h
 /home/nik/CLionProjects/KickAss/hyper_c.h
 ../ai/ai.h
 /home/nik/CLionProjects/KickAss/systems/ai/ai.h
+
+/home/nik/CLionProjects/KickAss/systems/health/health.h
+stdbool.h
+-
+../../hyper_c.h
+/home/nik/CLionProjects/KickAss/hyper_c.h
+
+/home/nik/CLionProjects/KickAss/systems/health/health_system.h
+../../hyper_c.h
+/home/nik/CLionProjects/KickAss/hyper_c.h
 
 /home/nik/CLionProjects/KickAss/systems/input/input.h
 SDL2/SDL.h

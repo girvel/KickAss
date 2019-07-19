@@ -13,6 +13,8 @@
      ? ( (B) > (C) ? (B) : MIN(A, C) ) \
      : ( (B) < (C) ? (B) : MAX(A, C) ))
 
+#define MAKE_MIN(A, B) A = MIN(A, B);
+
 #define MAKE_MEDIAN(A, B, C) A = MEDIAN(A, B, C);
 
 #endif //KICKASS_MATH_H

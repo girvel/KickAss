@@ -21,6 +21,8 @@ CMakeFiles/KickAss.dir/main.c.o
  /home/nik/CLionProjects/KickAss/systems/collision/collider.h
  /home/nik/CLionProjects/KickAss/systems/collision/collision.h
  /home/nik/CLionProjects/KickAss/systems/generation/generation.h
+ /home/nik/CLionProjects/KickAss/systems/health/health.h
+ /home/nik/CLionProjects/KickAss/systems/health/health_system.h
  /home/nik/CLionProjects/KickAss/systems/input/input.h
  /home/nik/CLionProjects/KickAss/systems/movement/movable.h
  /home/nik/CLionProjects/KickAss/systems/movement/movement.h

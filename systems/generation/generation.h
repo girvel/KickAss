@@ -14,12 +14,22 @@ typedef struct {
 
     list_rcharacter *creation_list;
     ai *ai;
-    rcharacter enemy_prototype;
+
+    rcharacter enemy_prototype, heal_prototype;
 } generation;
 
-DEF_CTOR(generation, (list_rcharacter *creation_list, rcharacter enemy_prototype, ai *ai, float start_delay, float step, int width), {
+DEF_CTOR(generation, (
+    list_rcharacter *creation_list,
+    rcharacter enemy_prototype,
+    rcharacter heal_prototype,
+    ai *ai,
+    float start_delay,
+    float step,
+    int width), {
+
     this->creation_list = creation_list;
     this->enemy_prototype = enemy_prototype;
+    this->heal_prototype = heal_prototype;
     this->ai = ai;
 
     this->delay = start_delay;
@@ -37,12 +47,12 @@ void generation_update(generation *this) {
         this->current_delay = 0;
         this->delay *= this->step;
 
-        rcharacter clone = CLONE(character, this->enemy_prototype);
+        rcharacter clone = CLONE(character, (rand() % 5 == 1) ? this->heal_prototype : this->enemy_prototype);
         list_rcharacter_add(this->creation_list, clone);
         clone->position->vector = $(vector)(rand() % this->width, 0);
         clone->movable->direction = $(vector)(0, 1);
 
-        ai_register(this->ai, clone);
+        if (clone->attacking != NULL) ai_register(this->ai, clone);
     }
 }
 

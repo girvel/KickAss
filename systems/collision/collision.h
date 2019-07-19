@@ -28,13 +28,21 @@ void collision_unregister(collision *this, rcharacter item) {
 void collision_check(collision *this) {
     FOREACH(rcharacter, solid, this->solids) {
         FOREACH(rcharacter, other, this->solids) {
-            if (solid != other &&
-                solid->collider->durability <= other->collider->durability &&
+            if (solid == other ||
                 vector_magnitude(
                     vector_substract(
                         solid->position->vector,
                         other->position->vector))
-                        < solid->collider->radius + other->collider->radius) {
+                >= solid->collider->radius + other->collider->radius) continue;
+
+            if (other->collider->is_healer) {
+                printf("Heal!\n");
+                solid->health->hp = MIN(solid->health->hp + other->collider->durability, solid->health->max_hp);
+                other->health->hp = 0;
+                continue;
+            }
+
+            if (solid->collider->durability <= other->collider->durability) {
 
                 printf("Collision!\n");
                 solid->health->hp -= other->collider->durability - solid->collider->durability;
