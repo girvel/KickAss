@@ -34,7 +34,20 @@ void attack_create_bullets(attack *this) {
         if (rc->attacking->attacks_now) {
             rc->attacking->attacks_now = false;
 
-            list_rcharacter_add(this->creation_list, CLONE(character, rc->attacking->bullet));
+            character *clone = CLONE(character, rc->attacking->bullet);
+
+            list_rcharacter_add(this->creation_list, clone);
+
+            clone->movable->direction = rc->attacking->attack_direction;
+
+            clone->position->vector =
+                vector_add(
+                    rc->position->vector,
+                    vector_multiply(
+                        clone->collider->radius + rc->collider->radius,
+                        rc->attacking->attack_direction
+                        )
+                    );
         }
     }
 }

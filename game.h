@@ -95,7 +95,7 @@ void game_register(game *this, character *item) {
     output_register(this->output, item);
     movement_register(this->movement, item);
     collision_register(this->collision, item);
-    attack_register(this->attack, item);
+    if (item->attacking != NULL) attack_register(this->attack, item);
 
     list_rcharacter_add(this->__all_characters, item);
 }
@@ -116,7 +116,7 @@ void game_unregister(game *this, character *item) {
     output_unregister(this->output, item);
     collision_unregister(this->collision, item);
     movement_unregister(this->movement, item);
-    attack_unregister(this->attack, item);
+    if (item->attacking != NULL) attack_unregister(this->attack, item);
 
     character_destroy(item);
 }
@@ -139,22 +139,25 @@ DEF_CTOR(game, (), {
     this->collision = $(collision)(this->destroying_list);
     this->attack = $(attack)(this->creation_list);
 
-    sprite sprite = sprite_load(this->output->renderer, "KickAss.bmp");
+    this->output->background = sprite_load(this->output->renderer, "Background.bmp", false);
 
-    rcharacter enemy = $(character)(
-        $(sprite_renderer)(sprite),
-        $(position)($(vector)(300, 100)),
-        $(movable)(0, true),
-        $(collider)(30, 1),
-        $(attacking)($(vector)(0, 1), NULL));
+    sprite player_sprite = sprite_load(this->output->renderer, "KickAss.bmp", true);
+    sprite bullet_sprite = sprite_load(this->output->renderer, "Bullet.bmp", true);
+
+    rcharacter player_bullet = $(character)(
+        $(sprite_renderer)(bullet_sprite),
+        $(position)(vector_zero()),
+        $(movable)(20, true),
+        $(collider)(3, 9),
+        NULL);
 
     game_register_player(this,
         $(character)(
-            $(sprite_renderer)(sprite),
+            $(sprite_renderer)(player_sprite),
             $(position)($(vector)(100, 100)),
             $(movable)(10, false),
-            $(collider)(30, 10),
-            $(attacking)($(vector)(0, -1), enemy)));
+            $(collider)(10, 10),
+            $(attacking)($(vector)(0, -1), player_bullet)));
 
     register_control(this->input);
 })

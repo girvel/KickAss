@@ -13,15 +13,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7a58b9b1-c099-4948-88be-b3ca60d4283f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.h" beforeDir="false" afterPath="$PROJECT_DIR$/character.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/KickAss.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/KickAss.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/KickAss" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/KickAss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control.h" beforeDir="false" afterPath="$PROJECT_DIR$/control.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.h" beforeDir="false" afterPath="$PROJECT_DIR$/game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hyper_c/definition.h" beforeDir="false" afterPath="$PROJECT_DIR$/hyper_c/definition.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hyper_c/macros.h" beforeDir="false" afterPath="$PROJECT_DIR$/hyper_c/macros.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hyper_c/usage.h" beforeDir="false" afterPath="$PROJECT_DIR$/hyper_c/usage.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/systems/attack/attack.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/attack/attack.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systems/attack/attacking.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/attack/attacking.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systems/output/output.h" beforeDir="false" afterPath="$PROJECT_DIR$/systems/output/output.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/tools/vector.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,39 +49,24 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/hyper_c/usage.h">
+            <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="160">
+                  <caret line="8" selection-start-line="8" selection-end-line="8" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/systems/attack/attack.h">
+            <entry file="file://$PROJECT_DIR$/systems/output/output.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="646">
-                  <caret line="35" selection-start-line="35" selection-end-line="35" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/main.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/hyper_c/macros.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="100">
-                  <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+                <state relative-caret-position="334">
+                  <caret line="82" column="93" selection-start-line="82" selection-start-column="93" selection-end-line="82" selection-end-column="93" />
+                  <folding>
+                    <element signature="e#89#110#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -91,57 +74,32 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/game.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="365">
-                  <caret line="101" selection-start-line="101" selection-end-line="101" />
+                <state relative-caret-position="221">
+                  <caret line="136" column="42" selection-start-line="136" selection-start-column="42" selection-end-line="136" selection-end-column="42" />
                   <folding>
                     <element signature="e#0#2#0" />
                     <element signature="e#497#753#0" />
-                    <element signature="e#804#850#0" />
-                    <element signature="e#1038#1088#0" />
-                    <element signature="e#1220#1399#0" />
-                    <element signature="e#894#1421#0" />
-                    <element signature="e#1119#1234#0" />
-                    <element signature="e#1478#1606#0" />
+                    <element signature="e#804#990#0" />
+                    <element signature="e#1034#1213#0" />
+                    <element signature="e#1216#1433#0" />
+                    <element signature="e#1436#1562#0" />
+                    <element signature="e#1565#1680#0" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/control.h">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tools/vector.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+                <state relative-caret-position="366">
+                  <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
                   <folding>
-                    <element signature="e#464#496#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/character.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="454">
-                  <caret line="43" selection-start-line="43" selection-end-line="43" />
-                  <folding>
-                    <element signature="e#95#129#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/hyper_c/definition.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-                  <folding>
-                    <element signature="e#97#117#0" expanded="true" />
+                    <element signature="e#89#110#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -185,9 +143,7 @@
         <option value="$PROJECT_DIR$/systems/input/input.h" />
         <option value="$PROJECT_DIR$/systems/movement/movable.h" />
         <option value="$PROJECT_DIR$/tools/math.h" />
-        <option value="$PROJECT_DIR$/tools/vector.h" />
         <option value="$PROJECT_DIR$/systems/output/sprite.h" />
-        <option value="$PROJECT_DIR$/systems/output/output.h" />
         <option value="$PROJECT_DIR$/systems/movement/movement.h" />
         <option value="$PROJECT_DIR$/systems/attack/attackable.h" />
         <option value="$PROJECT_DIR$/systems/collision/collision.h" />
@@ -196,12 +152,14 @@
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/systems/attack/attacking.h" />
         <option value="$PROJECT_DIR$/control.h" />
-        <option value="$PROJECT_DIR$/game.h" />
-        <option value="$PROJECT_DIR$/hyper_c/macros.h" />
         <option value="$PROJECT_DIR$/hyper_c/definition.h" />
         <option value="$PROJECT_DIR$/hyper_c/usage.h" />
         <option value="$PROJECT_DIR$/character.h" />
         <option value="$PROJECT_DIR$/systems/attack/attack.h" />
+        <option value="$PROJECT_DIR$/hyper_c/macros.h" />
+        <option value="$PROJECT_DIR$/game.h" />
+        <option value="$PROJECT_DIR$/tools/vector.h" />
+        <option value="$PROJECT_DIR$/systems/output/output.h" />
       </list>
     </option>
   </component>
@@ -231,6 +189,17 @@
               <item name="KickAss" type="b2602c69:ProjectViewProjectNode" />
               <item name="KickAss" type="462c0819:PsiDirectoryNode" />
               <item name="hyper_c" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KickAss" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KickAss" type="462c0819:PsiDirectoryNode" />
+              <item name="systems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KickAss" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KickAss" type="462c0819:PsiDirectoryNode" />
+              <item name="systems" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -308,7 +277,9 @@
       <workItem from="1563445779728" duration="4946000" />
       <workItem from="1563453492458" duration="1454000" />
       <workItem from="1563471482371" duration="4752000" />
-      <workItem from="1563484248992" duration="6385000" />
+      <workItem from="1563484248992" duration="7585000" />
+      <workItem from="1563528166043" duration="1376000" />
+      <workItem from="1563531346790" duration="1141000" />
     </task>
     <task id="LOCAL-00001" summary="Realize control map">
       <created>1563016661690</created>
@@ -394,17 +365,24 @@
       <option name="project" value="LOCAL" />
       <updated>1563487804616</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add attack system">
+      <created>1563490699107</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1563490699107</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79231000" />
+    <option name="totallyTimeSpent" value="82948000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="2562" height="1092" extended-state="6" />
+    <frame x="0" y="-4" width="2560" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12052506" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12211615" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -419,7 +397,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32925585" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.17737003" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.17329256" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -443,7 +421,8 @@
     <MESSAGE value="Add world border for movement" />
     <MESSAGE value="Refactor placing rules&#10;Now sprite's position is position of its center" />
     <MESSAGE value="Change destroying process" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change destroying process" />
+    <MESSAGE value="Add attack system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add attack system" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -618,16 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding>
-            <element signature="e#89#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/math.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -651,16 +620,6 @@
           <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#93#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/systems/output/output.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#89#110#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -699,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/systems/attack/attacking.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -713,33 +665,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hyper_c/macros.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hyper_c/usage.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hyper_c/definition.h">
+    <entry file="file://$PROJECT_DIR$/systems/attack/attack.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <element signature="e#97#117#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="820">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
+        <state relative-caret-position="980">
           <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
           <folding>
             <element signature="e#464#496#0" expanded="true" />
@@ -749,35 +691,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/character.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="700">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
           <folding>
             <element signature="e#95#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.h">
+    <entry file="file://$PROJECT_DIR$/hyper_c/definition.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="640">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#497#753#0" />
-            <element signature="e#804#850#0" />
-            <element signature="e#1038#1088#0" />
-            <element signature="e#1220#1399#0" />
-            <element signature="e#894#1421#0" />
-            <element signature="e#1119#1234#0" />
-            <element signature="e#1478#1606#0" />
+            <element signature="e#97#117#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/systems/attack/attack.h">
+    <entry file="file://$PROJECT_DIR$/hyper_c/macros.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="220">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="136" column="42" selection-start-line="136" selection-start-column="42" selection-end-line="136" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#497#753#0" />
+            <element signature="e#804#990#0" />
+            <element signature="e#1034#1213#0" />
+            <element signature="e#1216#1433#0" />
+            <element signature="e#1436#1562#0" />
+            <element signature="e#1565#1680#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding>
+            <element signature="e#89#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systems/output/output.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="82" column="93" selection-start-line="82" selection-start-column="93" selection-end-line="82" selection-end-column="93" />
+          <folding>
+            <element signature="e#89#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

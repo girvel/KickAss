@@ -18,6 +18,8 @@ typedef struct {
 
     list_rcharacter *subjects;
     vector size;
+
+    sprite background;
 } output;
 
 DEF_CTOR(output, (vector size), {
@@ -63,22 +65,30 @@ SDL_Rect rect_construct(vector position, vector size) {
     return result;
 }
 
-void output_sprite(output *this, sprite *sprite, position *position) {
+void output_sprite(output *this, sprite sprite, vector position) {
     SDL_Rect rect
         = rect_construct(
-            vector_substract(
-                position->vector,
-                vector_divide(sprite->size, 2)),
-            sprite->size);
+            sprite.centralized
+            ? vector_substract(
+                position,
+                vector_divide(sprite.size, 2))
+            : position,
+            sprite.size);
 
-    SDL_RenderCopy(this->renderer, sprite->texture, NULL, &rect);
+    SDL_RenderCopy(this->renderer, sprite.texture, NULL, &rect);
 }
 
 void output_display(output *this) {
     SDL_RenderClear(this->renderer);
 
+    for (int x = 0; x < ((float) this->size.x) / this->background.size.x; x++) {
+        for (int y = 0; y < ((float) this->size.y) / this->background.size.y; y++) {
+            output_sprite(this, this->background, vector_scale(this->background.size, x, y));
+        }
+    }
+
     FOREACH (rcharacter, c, this->subjects) {
-        output_sprite(this, c->sprite_renderer, c->position);
+        output_sprite(this, c->sprite_renderer->sprite, c->position->vector);
     }
 
     SDL_RenderPresent(this->renderer);
