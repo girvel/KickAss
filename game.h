@@ -29,6 +29,7 @@ DEF_EQUAL(rcharacter, {
 #include "systems/generation/generation.h"
 #include "systems/ai/ai.h"
 #include "systems/health/health_system.h"
+#include "systems/sound/sound.h"
 
 #define SYSTEM(TYPE) TYPE *TYPE;
 
@@ -43,6 +44,7 @@ typedef struct game {
     SYSTEM(generation)
     SYSTEM(ai)
     SYSTEM(health_system)
+    SYSTEM(sound)
 
     list_rcharacter *creation_list;
     list_rcharacter *destroying_list;
@@ -157,6 +159,7 @@ game *game_create() {
     this->collision = $(collision)();
     this->attack = $(attack)(this->creation_list);
     this->health_system = $(health_system)(this->destroying_list);
+    this->sound = $(sound)();
 
     rcharacter bullet = $(character)(
         $(sprite_renderer)(sprite_load(this->output->renderer, "Bullet.bmp", true)),
@@ -220,6 +223,13 @@ DEF_DTOR(game, {
 
     output_destroy(this->output);
     input_destroy(this->input);
+    collision_destroy(this->collision);
+    movement_destroy(this->movement);
+    attack_destroy(this->attack);
+    generation_destroy(this->generation);
+    ai_destroy(this->ai);
+    health_system_destroy(this->health_system);
+    sound_destroy(this->sound);
 })
 
 #endif //KICKASS_GAME_H

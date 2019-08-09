@@ -28,6 +28,7 @@ CMakeFiles/KickAss.dir/main.c.o: ../systems/movement/movement.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/output/output.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/output/sprite.h
 CMakeFiles/KickAss.dir/main.c.o: ../systems/placing/position.h
+CMakeFiles/KickAss.dir/main.c.o: ../systems/sound/sound.h
 CMakeFiles/KickAss.dir/main.c.o: ../tools/math.h
 CMakeFiles/KickAss.dir/main.c.o: ../tools/string.h
 CMakeFiles/KickAss.dir/main.c.o: ../tools/vector.h

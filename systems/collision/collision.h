@@ -45,7 +45,7 @@ void collision_check(collision *this) {
             if (solid->collider->durability <= other->collider->durability) {
 
                 printf("Collision!\n");
-                solid->health->hp -= other->collider->durability - solid->collider->durability;
+                solid->health->hp -= other->collider->durability;
             }
         }
     }
